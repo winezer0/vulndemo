@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruby on Rails 漏洞测试入口</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    h1 { color: #c00; }
+    h2 { color: #333; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+    .section { margin-bottom: 30px; }
+    a { display: inline-block; margin: 5px 10px 5px 0; padding: 8px 16px; background: #f5f5f5; border: 1px solid #ddd; text-decoration: none; color: #333; border-radius: 4px; }
+    a:hover { background: #e8e8e8; }
+    .desc { color: #666; font-size: 14px; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Ruby on Rails 漏洞测试入口</h1>
+
+  <div class="section">
+    <h2>1. 命令执行 (Command Execution)</h2>
+    <p class="desc">使用 backticks / system() 执行系统命令</p>
+    <a href="/cmd_exec/exec?cmd=echo%20hello">直接调用(外部参数)</a>
+    <a href="/cmd_exec/exec?cmd=whoami">直接调用(whoami)</a>
+    <a href="/cmd_exec/child?cmd=echo%20child">子类继承调用</a>
+    <a href="/cmd_exec/module?cmd=echo%20module">模块混入调用</a>
+    <a href="/cmd_exec/hardcoded">硬编码场景</a>
+    <a href="/cmd_exec/exec?cmd=cat%20/etc/passwd">危险命令(外部参数)</a>
+  </div>
+
+  <div class="section">
+    <h2>2. 代码执行 (Code Execution)</h2>
+    <p class="desc">使用 eval() 执行任意 Ruby 代码</p>
+    <a href="/code_exec/exec?code=1%2B1">直接调用(外部参数)</a>
+    <a href="/code_exec/exec?code=Dir.glob('/etc/*')">Dir.glob调用</a>
+    <a href="/code_exec/child?code=1%2B2">子类继承调用</a>
+    <a href="/code_exec/module?code=1%2B3">模块混入调用</a>
+    <a href="/code_exec/hardcoded">硬编码场景</a>
+    <a href="/code_exec/exec?code=system('id')">system调用</a>
+  </div>
+
+  <div class="section">
+    <h2>3. SSRF (Server-Side Request Forgery)</h2>
+    <p class="desc">使用 Net::HTTP 发起服务端请求</p>
+    <a href="/ssrf/fetch?url=http://127.0.0.1">直接调用(外部参数)</a>
+    <a href="/ssrf/fetch?url=http://169.254.169.254">AWS元数据(外部参数)</a>
+    <a href="/ssrf/child?url=http://127.0.0.1">子类继承调用</a>
+    <a href="/ssrf/module?url=http://127.0.0.1">模块混入调用</a>
+    <a href="/ssrf/hardcoded">硬编码场景</a>
+  </div>
+
+  <div class="section">
+    <h2>4. 跨文件函数调用 (Cross-File Function Call)</h2>
+    <p class="desc">跨文件函数调用链中的漏洞触发</p>
+    <a href="/func_call/cross?cmd=echo%20cross">命令执行(跨文件)</a>
+    <a href="/func_call/cross?code=100*100">代码执行(跨文件)</a>
+    <a href="/func_call/cross?url=http://127.0.0.1">SSRF(跨文件)</a>
+  </div>
+
+  <div class="section">
+    <h2>5. 漏洞调用链路径汇总</h2>
+    <p class="desc">所有漏洞路径的深层调用链</p>
+    <table border="1" cellpadding="8" cellspacing="0">
+      <tr><th>类型</th><th>场景</th><th>调用链</th></tr>
+      <tr><td>命令执行</td><td>子类继承</td><td>参数 → CmdExecSubClass → VulnChild → VulnParent.vuln_cmd_exec → backticks</td></tr>
+      <tr><td>命令执行</td><td>模块混入</td><td>参数 → CmdExecModuleImpl.include(VulnModule) → module_cmd_exec → backticks</td></tr>
+      <tr><td>代码执行</td><td>子类继承</td><td>参数 → CodeExecSubClass → VulnChild → VulnParent.vuln_code_exec → eval</td></tr>
+      <tr><td>代码执行</td><td>模块混入</td><td>参数 → CodeExecModuleImpl.include(VulnModule) → module_code_exec → eval</td></tr>
+      <tr><td>SSRF</td><td>子类继承</td><td>参数 → SsrfSubClass → VulnChild → VulnParent.vuln_ssrf → Net::HTTP</td></tr>
+      <tr><td>SSRF</td><td>模块混入</td><td>参数 → SsrfModuleImpl.include(VulnModule) → module_ssrf → Net::HTTP</td></tr>
+    </table>
+  </div>
+</body>
+</html>

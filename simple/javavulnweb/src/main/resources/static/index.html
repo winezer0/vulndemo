@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Java漏洞测试入口</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #666; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 10px 0; }
+        a { text-decoration: none; color: #0066cc; font-size: 16px; }
+        a:hover { text-decoration: underline; }
+        .section { margin-bottom: 30px; border: 1px solid #ddd; padding: 15px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Java漏洞测试入口页面</h1>
+    <p>以下链接用于测试各类漏洞调用链，包括命令执行、代码执行、SSRF。</p>
+
+    <div class="section">
+        <h2>跨文件函数调用测试 (FuncCall)</h2>
+        <ul>
+            <li><a href="/func/cmd">硬编码命令执行</a></li>
+            <li><a href="/func/cmd/param?cmd=echo+hello">带参命令执行</a></li>
+            <li><a href="/func/code">硬编码代码执行</a></li>
+            <li><a href="/func/code/param?script=1%2B2">带参代码执行</a></li>
+            <li><a href="/func/ssrf">硬编码SSRF</a></li>
+            <li><a href="/func/ssrf/param?url=http://example.com">带参SSRF</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>命令执行漏洞测试 (cmd_exec)</h2>
+        <ul>
+            <li><a href="/cmd/sub/hardcoded">子类继承硬编码命令执行</a></li>
+            <li><a href="/cmd/sub/param?cmd=whoami">子类继承带参命令执行</a></li>
+            <li><a href="/cmd/impl/hardcoded">接口实现类硬编码命令执行</a></li>
+            <li><a href="/cmd/impl/param?cmd=ls">接口实现类带参命令执行</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>代码执行漏洞测试 (code_exec)</h2>
+        <ul>
+            <li><a href="/code/sub/hardcoded">子类继承硬编码代码执行</a></li>
+            <li><a href="/code/sub/param?script=3*4">子类继承带参代码执行</a></li>
+            <li><a href="/code/impl/hardcoded">接口实现类硬编码代码执行</a></li>
+            <li><a href="/code/impl/param?script=5%2B6">接口实现类带参代码执行</a></li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>SSRF漏洞测试 (ssrf)</h2>
+        <ul>
+            <li><a href="/ssrf/sub/hardcoded">子类继承硬编码SSRF</a></li>
+            <li><a href="/ssrf/sub/param?url=http://example.com">子类继承带参SSRF</a></li>
+            <li><a href="/ssrf/impl/hardcoded">接口实现类硬编码SSRF</a></li>
+            <li><a href="/ssrf/impl/param?url=http://example.com">接口实现类带参SSRF</a></li>
+        </ul>
+    </div>
+</body>
+</html>

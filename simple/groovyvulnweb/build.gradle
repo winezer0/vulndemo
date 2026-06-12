@@ -1,0 +1,57 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.grails.org/grails/core" }
+    }
+    dependencies {
+        classpath "org.grails:grails-gradle-plugin:6.1.1"
+    }
+}
+
+plugins {
+    id "groovy"
+    id "war"
+}
+
+group = 'com.example'
+version = '0.1'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.grails.org/grails/core" }
+}
+
+dependencies {
+    // Grails core
+    compile "org.grails:grails-core"
+    compile "org.grails:grails-web-boot"
+    compile "org.grails:grails-spring-boot-starter"
+    compile "org.grails:grails-gradle-plugin"
+    
+    // GORM
+    compile "org.grails:grails-datastore-gorm"
+    compile "org.grails:grails-datastore-web"
+    
+    // Views
+    compile "org.grails:grails-plugin-views"
+    compile "org.grails:grails-plugin-gsp"
+    
+    // Runtime
+    runtime "com.h2database:h2"
+    runtime "org.postgresql:postgresql"
+    runtime "org.apache.tomcat:tomcat-juli"
+    
+    // Testing
+    testCompile "org.grails:grails-plugin-testing"
+    testCompile "org.spockframework:spock-core"
+    
+    // Compile
+    compile "org.grails:grails-plugin-services"
+    compile "org.grails:grails-plugin-url-mappings"
+    compile "org.grails:grails-plugin-interceptors"
+}
+
+test {
+    useJUnitPlatform()
+}

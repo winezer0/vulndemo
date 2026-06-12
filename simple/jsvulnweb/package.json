@@ -1,0 +1,13 @@
+{
+  "name": "jsvulnweb",
+  "version": "1.0.0",
+  "description": "JavaScript/Express vulnerability test code for security analysis tools",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0"
+  }
+}

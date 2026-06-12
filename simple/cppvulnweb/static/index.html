@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Vulnerability Test Suite</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        h1 { color: #c00; }
+        h2 { color: #333; border-bottom: 1px solid #ccc; padding-bottom: 5px; }
+        .test-link { margin: 10px 0; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .section { background: #f5f5f5; padding: 15px; margin: 10px 0; border-radius: 5px; }
+        code { background: #e0e0e0; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>C++ Vulnerability Test Suite</h1>
+    <p>基于Crow框架的漏洞测试入口页面</p>
+
+    <div class="section">
+        <h2>命令执行漏洞 (Command Execution)</h2>
+        <div class="test-link">
+            <a href="/cmd_exec/sub_class?cmd=whoami">SubClass Test (外部参数: whoami)</a>
+        </div>
+        <div class="test-link">
+            <a href="/cmd_exec/interface_impl?cmd=whoami">Interface Impl Test (外部参数: whoami)</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>代码执行漏洞 (Code Execution)</h2>
+        <div class="test-link">
+            <a href="/code_exec/sub_class?code=print(123)">SubClass Test (外部参数: print(123))</a>
+        </div>
+        <div class="test-link">
+            <a href="/code_exec/interface_impl?code=print(123)">Interface Impl Test (外部参数: print(123))</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>SSRF漏洞 (Server-Side Request Forgery)</h2>
+        <div class="test-link">
+            <a href="/ssrf/sub_class?url=http://example.com">SubClass Test (外部参数: http://example.com)</a>
+        </div>
+        <div class="test-link">
+            <a href="/ssrf/interface_impl?url=http://example.com">Interface Impl Test (外部参数: http://example.com)</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>跨文件函数调用 &amp; 硬编码漏洞</h2>
+        <div class="test-link">
+            <a href="/func_call?input=test_input">FuncCall Test (外部参数: test_input)</a>
+        </div>
+        <div class="test-link">
+            <a href="/hardcoded">Hardcoded Vuln Test (硬编码)</a>
+        </div>
+    </div>
+</body>
+</html>

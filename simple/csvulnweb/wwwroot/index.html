@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSVulnWeb 漏洞测试入口</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 20px; }
+        h1 { text-align: center; color: #ff6b6b; margin-bottom: 30px; }
+        h2 { color: #4ecdc4; margin: 20px 0 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .section { background: #16213e; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+        .test-link { display: block; padding: 8px 15px; margin: 5px 0; background: #0f3460; color: #4ecdc4; text-decoration: none; border-radius: 4px; transition: background 0.3s; }
+        .test-link:hover { background: #533483; }
+        .hardcoded { border-left: 3px solid #ff6b6b; }
+        .external { border-left: 3px solid #4ecdc4; }
+        .note { color: #888; font-size: 12px; margin-left: 10px; }
+        code { background: #333; padding: 2px 6px; border-radius: 3px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <h1>CSVulnWeb - ASP.NET Core 漏洞测试入口</h1>
+
+    <!-- 命令执行漏洞测试 -->
+    <div class="section">
+        <h2>命令执行漏洞 (CmdExec)</h2>
+        <h3>子类继承调用</h3>
+        <a class="test-link external" href="/cmd/subclass?cmd=whoami">
+            子类继承 - 外部参数命令执行 <span class="note">GET /cmd/subclass?cmd=whoami</span>
+        </a>
+        <a class="test-link hardcoded" href="/cmd/subclass/hardcoded">
+            子类继承 - 硬编码命令执行 <span class="note">GET /cmd/subclass/hardcoded</span>
+        </a>
+        <h3>接口实现类调用</h3>
+        <a class="test-link external" href="/cmd/interface?cmd=whoami">
+            接口实现 - 外部参数命令执行 <span class="note">GET /cmd/interface?cmd=whoami</span>
+        </a>
+        <a class="test-link hardcoded" href="/cmd/interface/hardcoded">
+            接口实现 - 硬编码命令执行 <span class="note">GET /cmd/interface/hardcoded</span>
+        </a>
+    </div>
+
+    <!-- 代码执行漏洞测试 -->
+    <div class="section">
+        <h2>代码执行漏洞 (CodeExec)</h2>
+        <h3>子类继承调用</h3>
+        <a class="test-link external" href="/code/subclass?code=1%2B1">
+            子类继承 - 外部参数代码执行 <span class="note">GET /code/subclass?code=1+1</span>
+        </a>
+        <a class="test-link hardcoded" href="/code/subclass/hardcoded">
+            子类继承 - 硬编码代码执行 <span class="note">GET /code/subclass/hardcoded</span>
+        </a>
+        <h3>接口实现类调用</h3>
+        <a class="test-link external" href="/code/interface?code=1%2B1">
+            接口实现 - 外部参数代码执行 <span class="note">GET /code/interface?code=1+1</span>
+        </a>
+        <a class="test-link hardcoded" href="/code/interface/hardcoded">
+            接口实现 - 硬编码代码执行 <span class="note">GET /code/interface/hardcoded</span>
+        </a>
+    </div>
+
+    <!-- SSRF漏洞测试 -->
+    <div class="section">
+        <h2>SSRF漏洞</h2>
+        <h3>子类继承调用</h3>
+        <a class="test-link external" href="/ssrf/subclass?url=http://example.com">
+            子类继承 - 外部参数SSRF <span class="note">GET /ssrf/subclass?url=http://example.com</span>
+        </a>
+        <a class="test-link hardcoded" href="/ssrf/subclass/hardcoded">
+            子类继承 - 硬编码SSRF <span class="note">GET /ssrf/subclass/hardcoded</span>
+        </a>
+        <h3>接口实现类调用</h3>
+        <a class="test-link external" href="/ssrf/interface?url=http://example.com">
+            接口实现 - 外部参数SSRF <span class="note">GET /ssrf/interface?url=http://example.com</span>
+        </a>
+        <a class="test-link hardcoded" href="/ssrf/interface/hardcoded">
+            接口实现 - 硬编码SSRF <span class="note">GET /ssrf/interface/hardcoded</span>
+        </a>
+    </div>
+
+    <!-- 跨文件调用测试 -->
+    <div class="section">
+        <h2>跨文件函数调用 (FuncCall)</h2>
+        <a class="test-link external" href="/funccall/cmd?cmd=whoami">
+            跨文件 - 命令执行 <span class="note">GET /funccall/cmd?cmd=whoami</span>
+        </a>
+        <a class="test-link external" href="/funccall/code?code=1%2B1">
+            跨文件 - 代码执行 <span class="note">GET /funccall/code?code=1+1</span>
+        </a>
+        <a class="test-link external" href="/funccall/ssrf?url=http://example.com">
+            跨文件 - SSRF <span class="note">GET /funccall/ssrf?url=http://example.com</span>
+        </a>
+        <a class="test-link external" href="/funccall/child?cmd=whoami">
+            跨文件 - 通过子类调用 <span class="note">GET /funccall/child?cmd=whoami</span>
+        </a>
+        <a class="test-link hardcoded" href="/funccall/hardcoded">
+            跨文件 - 硬编码测试 <span class="note">GET /funccall/hardcoded</span>
+        </a>
+    </div>
+
+    <div class="section" style="text-align: center; color: #666;">
+        <p>参数说明：<code>cmd</code> = 命令参数, <code>code</code> = 代码参数, <code>url</code> = 目标URL</p>
+        <p>所有漏洞均通过 父类VulnParent → 子类/接口实现类 → 路由层 构造完整调用链</p>
+    </div>
+</body>
+</html>

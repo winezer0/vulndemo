@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rust漏洞测试入口</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 5px; }
+        .test-link { display: block; margin: 10px 0; padding: 8px; background-color: #f5f5f5; text-decoration: none; color: #333; border-radius: 3px; }
+        .test-link:hover { background-color: #e0e0e0; }
+        .warning { color: #ff6600; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Rust漏洞测试入口页面</h1>
+    <p class="warning">警告：此页面包含故意设计的漏洞代码，仅用于安全测试，请勿在生产环境使用。</p>
+    
+    <div class="test-section">
+        <h2>跨文件函数调用测试</h2>
+        <a href="/func_call?cmd=hello" class="test-link">测试跨文件函数调用</a>
+        <p>测试硬编码漏洞和跨文件调用链</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>命令执行漏洞测试</h2>
+        <a href="/cmd_exec_struct?cmd=ls" class="test-link">命令执行 - 结构体组合调用</a>
+        <a href="/cmd_exec_trait?cmd=whoami" class="test-link">命令执行 - Trait实现调用</a>
+        <p>测试命令执行漏洞，包括结构体组合和trait实现两种调用方式</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>代码执行漏洞测试</h2>
+        <a href="/code_exec_struct?code=echo+test" class="test-link">代码执行 - 结构体组合调用</a>
+        <a href="/code_exec_trait?code=ls+-la" class="test-link">代码执行 - Trait实现调用</a>
+        <p>测试代码执行漏洞（模拟，Rust无eval函数）</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>SSRF漏洞测试</h2>
+        <a href="/ssrf_struct?url=http://127.0.0.1:8080" class="test-link">SSRF - 结构体组合调用</a>
+        <a href="/ssrf_trait?url=http://example.com" class="test-link">SSRF - Trait实现调用</a>
+        <p>测试服务器请求伪造漏洞</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>说明</h2>
+        <ul>
+            <li>所有测试链接都带有示例参数，可直接点击测试</li>
+            <li>命令执行和代码执行测试可能在服务器上执行实际命令</li>
+            <li>SSRF测试会向指定URL发送请求</li>
+            <li>请确保在受控环境中运行此测试应用</li>
+        </ul>
+    </div>
+</body>
+</html>

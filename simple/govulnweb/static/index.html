@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Go VulnWeb 漏洞测试入口</title>
+    <style>
+        body { font-family: monospace; background: #1a1a2e; color: #e0e0e0; padding: 20px; }
+        h1 { color: #ff6b6b; }
+        .section { background: #16213e; padding: 15px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #ff6b6b; }
+        .section h2 { color: #ff6b6b; margin-top: 0; }
+        a { color: #4ecdc4; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        code { background: #0f3460; padding: 2px 6px; border-radius: 4px; color: #ffe66d; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 5px; }
+        .tag-vuln { background: #e74c3c; color: white; }
+        .tag-hardcode { background: #f39c12; color: white; }
+        .tag-struct { background: #3498db; color: white; }
+        .tag-iface { background: #9b59b6; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Go VulnWeb 漏洞测试入口</h1>
+    <p>基于 Gin 框架的 Go Web 漏洞测试代码，用于安全代码分析工具深度能力验证。</p>
+
+    <div class="section">
+        <h2>命令执行漏洞 (cmd_exec)</h2>
+        <p><span class="tag tag-vuln">命令注入</span> <span class="tag tag-struct">结构体调用</span></p>
+        <p>路径: <code>/cmd/sub_struct</code> | 参数: <code>?cmd=whoami</code></p>
+        <a href="/cmd/sub_struct?cmd=whoami">测试: 结构体调用 - 命令执行 (whoami)</a><br>
+        <a href="/cmd/sub_struct?cmd=ls">测试: 结构体调用 - 命令执行 (ls)</a><br>
+
+        <p><span class="tag tag-vuln">命令注入</span> <span class="tag tag-iface">接口实现</span></p>
+        <p>路径: <code>/cmd/interface</code> | 参数: <code>?cmd=whoami</code></p>
+        <a href="/cmd/interface?cmd=whoami">测试: 接口实现 - 命令执行 (whoami)</a><br>
+        <a href="/cmd/interface?cmd=ls -la">测试: 接口实现 - 命令执行 (ls -la)</a><br>
+    </div>
+
+    <div class="section">
+        <h2>代码执行漏洞 (code_exec)</h2>
+        <p><span class="tag tag-vuln">代码执行</span> <span class="tag tag-struct">结构体调用</span></p>
+        <p>路径: <code>/code/sub_struct</code> | 参数: <code>?template=echo%%20%s&arg=hello</code></p>
+        <a href="/code/sub_struct?template=echo%%20code_%s&arg=executed">测试: 结构体调用 - 代码执行</a><br>
+
+        <p><span class="tag tag-vuln">代码执行</span> <span class="tag tag-iface">接口实现</span></p>
+        <p>路径: <code>/code/interface</code> | 参数: <code>?template=echo%%20%s&arg=hello</code></p>
+        <a href="/code/interface?template=echo%%20interface_%s&arg=executed">测试: 接口实现 - 代码执行</a><br>
+    </div>
+
+    <div class="section">
+        <h2>SSRF漏洞 (ssrf)</h2>
+        <p><span class="tag tag-vuln">SSRF</span> <span class="tag tag-struct">结构体调用</span></p>
+        <p>路径: <code>/ssrf/sub_struct</code> | 参数: <code>?url=http://127.0.0.1:8080</code></p>
+        <a href="/ssrf/sub_struct?url=http://127.0.0.1:8080">测试: 结构体调用 - SSRF</a><br>
+        <a href="/ssrf/sub_struct?url=http://example.com">测试: 结构体调用 - SSRF (外网)</a><br>
+
+        <p><span class="tag tag-vuln">SSRF</span> <span class="tag tag-iface">接口实现</span></p>
+        <p>路径: <code>/ssrf/interface</code> | 参数: <code>?url=http://127.0.0.1:8080</code></p>
+        <a href="/ssrf/interface?url=http://127.0.0.1:8080">测试: 接口实现 - SSRF</a><br>
+        <a href="/ssrf/interface?url=http://example.com">测试: 接口实现 - SSRF (外网)</a><br>
+    </div>
+
+    <div class="section">
+        <h2>跨文件函数调用 & 硬编码漏洞</h2>
+        <p><span class="tag tag-hardcode">硬编码</span></p>
+        <p>路径: <code>/func_call</code> | 参数: <code>?cmd=whoami</code></p>
+        <a href="/func_call?cmd=whoami">测试: 跨文件调用 + 硬编码漏洞</a><br>
+        <a href="/func_call">测试: 跨文件调用 (默认参数)</a><br>
+    </div>
+</body>
+</html>

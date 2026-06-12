@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dart Shelf 漏洞测试入口</title>
+  <style>
+    body { font-family: 'Microsoft YaHei', sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+    h1 { color: #d32f2f; text-align: center; }
+    h2 { color: #1565c0; border-bottom: 2px solid #1565c0; padding-bottom: 5px; margin-top: 30px; }
+    .section { background: white; border-radius: 8px; padding: 15px 20px; margin: 15px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .link-group { margin: 10px 0; }
+    .link-group a { display: inline-block; margin: 4px 8px 4px 0; padding: 6px 12px; background: #e3f2fd; color: #1565c0; text-decoration: none; border-radius: 4px; font-size: 14px; transition: background 0.2s; }
+    .link-group a:hover { background: #bbdefb; }
+    .link-group a.hardcoded { background: #fff3e0; color: #e65100; }
+    .link-group a.hardcoded:hover { background: #ffe0b2; }
+    .tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; margin-right: 5px; }
+    .tag-ext { background: #c8e6c9; color: #2e7d32; }
+    .tag-hc { background: #ffcdd2; color: #c62828; }
+    .tag-inherit { background: #e1bee7; color: #6a1b9a; }
+    .tag-iface { background: #b3e5fc; color: #01579b; }
+    .tag-cross { background: #f0f4c3; color: #827717; }
+    code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+    .note { color: #666; font-size: 13px; font-style: italic; }
+    hr { border: none; border-top: 1px solid #e0e0e0; margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <h1>Dart Shelf 漏洞测试入口页面</h1>
+  <p class="note">所有测试用例均包含外部可控参数和硬编码两种场景，支持子类继承和接口实现两种调用链。</p>
+
+  <!-- ==================== 命令执行漏洞 ==================== -->
+  <div class="section">
+    <h2>命令执行漏洞 (Command Injection)</h2>
+
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/cmd/sub/inherited?cmd=whoami">子类继承 - 外部参数执行命令</a>
+      <span class="note">调用链：参数→child→parent→Process.run</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-hc">硬编码</span>
+      <a href="/cmd/sub/hardcoded" class="hardcoded">子类继承 - 硬编码命令执行</a>
+      <span class="note">调用链：硬编码→child→parent→Process(whoami)</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/cmd/sub/special?param=127.0.0.1">子类特有方法 - 跨文件函数命令拼接</a>
+      <span class="note">调用链：参数→child→crossFileExecCommand</span>
+    </div>
+
+    <hr>
+
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/cmd/iface/exec?cmd=ls">接口实现 - 外部参数命令执行</a>
+      <span class="note">调用链：参数→interfaceImpl→crossFile→parent→Process</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/cmd/iface/args?cmd=ping&args=127.0.0.1">接口实现 - 带参数命令执行</a>
+      <span class="note">调用链：参数→interfaceImpl→Process.runSync(带参数)</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-hc">硬编码</span>
+      <a href="/cmd/iface/hardcoded" class="hardcoded">接口实现 - 硬编码命令执行</a>
+      <span class="note">调用链：硬编码→interfaceImpl→parent(硬编码)→Process</span>
+    </div>
+  </div>
+
+  <!-- ==================== 代码执行漏洞 ==================== -->
+  <div class="section">
+    <h2>代码执行漏洞 (Code Injection)</h2>
+
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/code/sub/inherited?code=import('os').system('whoami')">子类继承 - 外部参数代码执行</a>
+      <span class="note">调用链：参数→child→parent→eval</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-hc">硬编码</span>
+      <a href="/code/sub/hardcoded" class="hardcoded">子类继承 - 硬编码代码执行</a>
+      <span class="note">调用链：硬编码→child→parent→eval(硬编码)</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/code/sub/build?code=print('hello')">子类特有方法 - 跨文件函数代码构建</a>
+      <span class="note">调用链：参数→child→crossFileBuildCodeSnippet</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/code/sub/dynamic?func=os.system">子类继承 - 动态函数调用</a>
+      <span class="note">调用链：参数→child→parent→动态invoke</span>
+    </div>
+
+    <hr>
+
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/code/iface/exec?code=eval('alert(1)')">接口实现 - 外部参数代码执行</a>
+      <span class="note">调用链：参数→interfaceImpl→crossFile→parent→eval</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/code/iface/chain?code=test">接口实现 - 多层代码构建</a>
+      <span class="note">调用链：参数→interfaceImpl→多层拼接→crossFile→parent→eval</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-hc">硬编码</span>
+      <a href="/code/iface/hardcoded" class="hardcoded">接口实现 - 硬编码代码执行</a>
+      <span class="note">调用链：硬编码→interfaceImpl→parent(硬编码)→eval</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/code/iface/dynamic?code=malicious_func">接口实现 - 动态代码构造</a>
+      <span class="note">调用链：参数→interfaceImpl→多层包装</span>
+    </div>
+  </div>
+
+  <!-- ==================== SSRF漏洞 ==================== -->
+  <div class="section">
+    <h2>SSRF漏洞 (Server-Side Request Forgery)</h2>
+
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/ssrf/sub/fetch?url=http://192.168.1.1:8080/admin">子类继承 - 外部参数SSRF</a>
+      <span class="note">调用链：参数→child→parent→URL拼接</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-hc">硬编码</span>
+      <a href="/ssrf/sub/hardcoded" class="hardcoded">子类继承 - 硬编码内网地址</a>
+      <span class="note">调用链：硬编码→child→parent→内网URL</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/ssrf/sub/parse?url=http://evil.com/steal?data=secret">子类继承 - Uri.parse解析外部输入</a>
+      <span class="note">调用链：参数→child→parent→Uri.parse</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-inherit">子类继承</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/ssrf/sub/childparse?url=http://internal:3000/api">子类特有方法 - childParseUri</a>
+      <span class="note">调用链：参数→child→Uri.parse</span>
+    </div>
+
+    <hr>
+
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/ssrf/iface/fetch?url=http://10.0.0.1/secret">接口实现 - 外部参数SSRF</a>
+      <span class="note">调用链：参数→interfaceImpl→crossFile→parent→URL</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/ssrf/iface/chain?url=http://victim.com/data">接口实现 - 多层URL构造</a>
+      <span class="note">调用链：参数→interfaceImpl→内网代理+参数→parent→URL</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-hc">硬编码</span>
+      <a href="/ssrf/iface/hardcoded" class="hardcoded">接口实现 - 硬编码SSRF</a>
+      <span class="note">调用链：硬编码→interfaceImpl→parent(硬编码)→内网URL</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-iface">接口实现</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/ssrf/iface/dynamicuri?url=http://example.com/path?key=value">接口实现 - 动态Uri解析</a>
+      <span class="note">调用链：参数→interfaceImpl→Uri.parse+参数提取</span>
+    </div>
+  </div>
+
+  <!-- ==================== 跨文件函数调用 ==================== -->
+  <div class="section">
+    <h2>跨文件函数调用测试</h2>
+
+    <div class="link-group">
+      <span class="tag tag-cross">跨文件</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/cross/cmd?input=whoami">跨文件命令拼接函数</a>
+      <span class="note">func_call.dart → crossFileExecCommand</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-cross">跨文件</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/cross/code?input=print('pwned')">跨文件代码构建函数</a>
+      <span class="note">func_call.dart → crossFileBuildCodeSnippet</span>
+    </div>
+    <div class="link-group">
+      <span class="tag tag-cross">跨文件</span>
+      <span class="tag tag-ext">外部参数</span>
+      <a href="/cross/url?input=http://evil.com">跨文件URL构建函数</a>
+      <span class="note">func_call.dart → crossFileBuildTargetUrl</span>
+    </div>
+  </div>
+
+  <!-- ==================== 说明 ==================== -->
+  <div class="section">
+    <h2>调用链说明</h2>
+    <p><strong>图例：</strong></p>
+    <p>
+      <span class="tag tag-ext">外部参数</span> = 通过URL query parameter传入的可控数据<br>
+      <span class="tag tag-hc">硬编码</span> = 代码中固定的漏洞触发数据<br>
+      <span class="tag tag-inherit">子类继承</span> = 通过 VulnChild extends VulnParent 继承链触发<br>
+      <span class="tag tag-iface">接口实现</span> = 通过 VulnInterface + VulnParent 组合实现触发<br>
+      <span class="tag tag-cross">跨文件</span> = 通过 func_call.dart 中的独立函数触发
+    </p>
+    <p><strong>完整调用链示例：</strong></p>
+    <pre>外部请求参数 → server.dart路由 → 子类/接口实现类 → 跨文件函数 → 父类漏洞方法 → Process.run / eval / http请求</pre>
+  </div>
+</body>
+</html>

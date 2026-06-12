@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS漏洞测试入口</title>
+  <style>
+    body { font-family: monospace; max-width: 900px; margin: 20px auto; background: #1a1a2e; color: #e0e0e0; padding: 20px; }
+    h1 { color: #ff6b6b; text-align: center; }
+    h2 { color: #ffd93d; border-bottom: 1px solid #333; padding-bottom: 5px; margin-top: 30px; }
+    .section { margin: 10px 0; }
+    a { display: inline-block; margin: 4px 8px; padding: 8px 14px; background: #16213e; color: #4ecdc4; text-decoration: none; border: 1px solid #0f3460; border-radius: 4px; font-size: 14px; }
+    a:hover { background: #0f3460; color: #fff; }
+    .hardcoded a { border-color: #e74c3c; color: #ff6b6b; }
+    .note { color: #888; font-size: 12px; margin: 5px 0 15px 10px; }
+  </style>
+</head>
+<body>
+  <h1>JavaScript/Express 漏洞测试入口</h1>
+
+  <h2>命令执行 (cmd_exec)</h2>
+  <div class="section">
+    <a href="/cmd/direct?input=hello">直接执行 [外部参数]</a>
+    <a href="/cmd/direct-hardcoded" class="hardcoded">直接执行 [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/cmd/crossfile?input=hello">跨文件函数 [外部参数]</a>
+    <a href="/cmd/crossfile-hardcoded" class="hardcoded">跨文件函数 [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/cmd/subclass?input=hello">子类继承 [外部参数]</a>
+    <a href="/cmd/subclass-hardcoded" class="hardcoded">子类继承 [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/cmd/interface?input=hello">接口实现 [外部参数]</a>
+    <a href="/cmd/interface-hardcoded" class="hardcoded">接口实现 [硬编码]</a>
+  </div>
+
+  <h2>代码执行 (code_exec)</h2>
+  <div class="section">
+    <a href="/code/direct?input='hello'">直接执行 [外部参数]</a>
+    <a href="/code/direct-hardcoded" class="hardcoded">直接执行 [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/code/crossfile?input='hello'">跨文件函数 [外部参数]</a>
+    <a href="/code/crossfile-hardcoded" class="hardcoded">跨文件函数 [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/code/subclass?input='hello'">子类继承 [外部参数]</a>
+    <a href="/code/subclass-hardcoded" class="hardcoded">子类继承 [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/code/interface?input='hello'">接口实现 [外部参数]</a>
+    <a href="/code/interface-hardcoded" class="hardcoded">接口实现 [硬编码]</a>
+  </div>
+
+  <h2>SSRF</h2>
+  <div class="section">
+    <a href="/ssrf/direct?url=http://127.0.0.1:8080">直接SSRF [外部参数]</a>
+    <a href="/ssrf/direct-hardcoded" class="hardcoded">直接SSRF [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/ssrf/crossfile?url=http://127.0.0.1:8080">跨文件函数 [外部参数]</a>
+    <a href="/ssrf/crossfile-hardcoded" class="hardcoded">跨文件函数 [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/ssrf/subclass?url=http://127.0.0.1:8080">子类继承 [外部参数]</a>
+    <a href="/ssrf/subclass-hardcoded" class="hardcoded">子类继承 [硬编码]</a>
+  </div>
+  <div class="section">
+    <a href="/ssrf/interface?url=http://127.0.0.1:8080">接口实现 [外部参数]</a>
+    <a href="/ssrf/interface-hardcoded" class="hardcoded">接口实现 [硬编码]</a>
+  </div>
+
+  <p class="note">红色边框链接为硬编码无外部数据源场景，绿色边框为外部可控数据源场景。</p>
+</body>
+</html>

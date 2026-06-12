@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C语言Web漏洞测试平台 - libmicrohttpd</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; }
+        .section { margin: 20px 0; padding: 15px; border-left: 4px solid #4CAF50; background: #f9f9f9; }
+        .section h2 { color: #4CAF50; margin-top: 0; }
+        a { display: inline-block; margin: 5px 10px; padding: 8px 16px; background: #2196F3; color: white; text-decoration: none; border-radius: 4px; }
+        a:hover { background: #1976D2; }
+        .warning { color: #ff9800; font-weight: bold; }
+        .footer { margin-top: 30px; text-align: center; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>C语言Web漏洞测试平台</h1>
+        <p class="warning">警告：本平台仅用于安全测试和研究，请勿用于非法用途！</p>
+        
+        <div class="section">
+            <h2>命令执行漏洞测试</h2>
+            <p>测试 system() 函数调用导致的命令注入漏洞</p>
+            <a href="/cmd_exec_sub?cmd=ls -la">子结构体继承调用测试</a>
+            <a href="/cmd_exec_iface?cmd=whoami">接口实现类调用测试</a>
+            <a href="/cmd_exec_hardcoded">硬编码参数测试</a>
+        </div>
+        
+        <div class="section">
+            <h2>代码执行漏洞测试</h2>
+            <p>测试动态代码执行导致的代码注入漏洞</p>
+            <a href="/code_exec_sub?code=print(1)">子结构体继承调用测试</a>
+            <a href="/code_exec_iface?code=os.system('id')">接口实现类调用测试</a>
+            <a href="/code_exec_hardcoded">硬编码参数测试</a>
+        </div>
+        
+        <div class="section">
+            <h2>SSRF漏洞测试</h2>
+            <p>测试服务器端请求伪造漏洞</p>
+            <a href="/ssrf_sub?url=http://127.0.0.1:8080">子结构体继承调用测试</a>
+            <a href="/ssrf_iface?url=http://192.168.1.1">接口实现类调用测试</a>
+            <a href="/ssrf_hardcoded">硬编码参数测试</a>
+        </div>
+        
+        <div class="section">
+            <h2>跨文件函数调用测试</h2>
+            <p>测试跨文件函数调用和硬编码漏洞</p>
+            <a href="/func_cmd?cmd=date">函数调用命令执行</a>
+            <a href="/func_code?code=import os">函数调用代码执行</a>
+            <a href="/func_ssrf?url=http://example.com">函数调用SSRF</a>
+        </div>
+        
+        <div class="footer">
+            <p>服务器端：libmicrohttpd | 漏洞类型：命令执行、代码执行、SSRF</p>
+            <p>模拟面向对象：结构体继承、函数指针接口、多层调用链</p>
+        </div>
+    </div>
+</body>
+</html>

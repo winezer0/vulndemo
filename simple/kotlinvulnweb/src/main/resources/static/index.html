@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotlin VulnWeb 漏洞测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .category {
+            background-color: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .category h2 {
+            color: #666;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #f8f9fa;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #e9ecef;
+        }
+        .vuln-type {
+            font-weight: bold;
+            color: #dc3545;
+        }
+        .scenario {
+            font-size: 0.9em;
+            color: #6c757d;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Kotlin/Ktor 漏洞测试用例</h1>
+    
+    <div class="category">
+        <h2>命令执行漏洞 (Command Injection)</h2>
+        <ul>
+            <li>
+                <a href="/cmd/exec?input=ls">
+                    <span class="vuln-type">子类继承测试</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cmd/exec-hardcoded">
+                    <span class="vuln-type">子类继承测试</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cmd/interface?input=ls">
+                    <span class="vuln-type">接口实现测试</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cmd/interface-hardcoded">
+                    <span class="vuln-type">接口实现测试</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h2>代码执行漏洞 (Code Injection)</h2>
+        <ul>
+            <li>
+                <a href="/code/exec?input=2+3">
+                    <span class="vuln-type">子类继承测试</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/code/exec-hardcoded">
+                    <span class="vuln-type">子类继承测试</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/code/interface?input=2+3">
+                    <span class="vuln-type">接口实现测试</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/code/interface-hardcoded">
+                    <span class="vuln-type">接口实现测试</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h2>SSRF漏洞 (Server-Side Request Forgery)</h2>
+        <ul>
+            <li>
+                <a href="/ssrf/exec?url=http://example.com">
+                    <span class="vuln-type">子类继承测试</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/ssrf/exec-hardcoded">
+                    <span class="vuln-type">子类继承测试</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/ssrf/interface?url=http://example.com">
+                    <span class="vuln-type">接口实现测试</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/ssrf/interface-hardcoded">
+                    <span class="vuln-type">接口实现测试</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="category">
+        <h2>跨文件调用测试</h2>
+        <ul>
+            <li>
+                <a href="/cross/cmd?input=ls">
+                    <span class="vuln-type">跨文件函数调用 - 命令执行</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/cmd-hardcoded">
+                    <span class="vuln-type">跨文件函数调用 - 命令执行</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/code?input=2+3">
+                    <span class="vuln-type">跨文件函数调用 - 代码执行</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/code-hardcoded">
+                    <span class="vuln-type">跨文件函数调用 - 代码执行</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/ssrf/cross?url=http://example.com">
+                    <span class="vuln-type">跨文件函数调用 - SSRF</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/ssrf/cross-hardcoded">
+                    <span class="vuln-type">跨文件函数调用 - SSRF</span>
+                    <span class="scenario">硬编码场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/subclass/cmd?input=ls">
+                    <span class="vuln-type">跨文件类调用 - 命令执行子类</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/subclass/code?input=2+3">
+                    <span class="vuln-type">跨文件类调用 - 代码执行子类</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/subclass/ssrf?url=http://example.com">
+                    <span class="vuln-type">跨文件类调用 - SSRF子类</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/interface/cmd?input=ls">
+                    <span class="vuln-type">跨文件类调用 - 命令执行接口</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/interface/code?input=2+3">
+                    <span class="vuln-type">跨文件类调用 - 代码执行接口</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+            <li>
+                <a href="/cross/interface/ssrf?url=http://example.com">
+                    <span class="vuln-type">跨文件类调用 - SSRF接口</span>
+                    <span class="scenario">外部参数场景</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
