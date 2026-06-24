@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/zzet/gortex/testdata/go/cmd_exec"
-	"github.com/zzet/gortex/testdata/go/common"
-	"github.com/zzet/gortex/testdata/go/iface"
+	"vulndemo/easy/go/cmd_exec"
+	"vulndemo/easy/go/common"
+	"vulndemo/easy/go/iface"
 )
 
 func RunByChild(cmd string) string {
