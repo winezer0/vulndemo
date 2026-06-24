@@ -1,15 +1,16 @@
-﻿import common.VulnChild;
-import iface.VulnRunner;
-import cmd_exec.InterfaceImpl;
+﻿package testdata.java;
+
+import testdata.java.cmd_exec.InterfaceImpl;
+import testdata.java.common.VulnChild;
+import testdata.java.iface.VulnRunner;
 
 public class FuncCall {
-    public static void runByChild(String cmd) throws Exception {
-        VulnChild child = new VulnChild();
-        child.exec(cmd);
+    public String runByChild(String cmd) {
+        return new VulnChild().run(cmd);
     }
 
-    public static void runByInterface(String cmd) throws Exception {
+    public String runByInterface(String cmd) {
         VulnRunner runner = new InterfaceImpl();
-        runner.run(cmd);
+        return runner.run(cmd);
     }
 }
