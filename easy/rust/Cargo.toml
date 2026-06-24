@@ -1,0 +1,10 @@
+[package]
+name = "rust_vuln"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+[[bin]]
+name = "rust_vuln"
+path = "main.rs"
