@@ -1,0 +1,5 @@
+{
+  "name": "scope-filter-demo",
+  "private": true,
+  "workspaces": ["repositories/*"]
+}

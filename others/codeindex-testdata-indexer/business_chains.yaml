@@ -1,0 +1,50 @@
+version: 1
+cases:
+  - name: java-business-chain
+    language: java
+    fixture: business-chains/java
+    expected: {confirmed: 2}
+    edges:
+      - from: {file: UserController.java, name: create, type_name: UserController}
+        to: {file: UserService.java, name: create, type_name: UserService}
+      - from: {file: UserService.java, name: create, type_name: UserService}
+        to: {file: UserRepository.java, name: save, type_name: UserRepository}
+    forbidden:
+      - from: {file: UserController.java, name: create, type_name: UserController}
+        to: {file: UserController.java, name: create, type_name: UserController}
+  - name: go-business-chain
+    language: go
+    fixture: business-chains/go
+    expected: {confirmed: 2}
+    edges:
+      - from: {file: controller.go, name: Create, type_name: UserController}
+        to: {file: service.go, name: Create, type_name: UserService}
+      - from: {file: service.go, name: Create, type_name: UserService}
+        to: {file: repository.go, name: Save, type_name: UserRepository}
+    forbidden:
+      - from: {file: controller.go, name: Create, type_name: UserController}
+        to: {file: controller.go, name: Create, type_name: UserController}
+  - name: typescript-business-chain
+    language: typescript
+    fixture: business-chains/typescript
+    expected: {confirmed: 2}
+    edges:
+      - from: {file: controller.ts, name: create, type_name: UserController}
+        to: {file: service.ts, name: create, type_name: UserService}
+      - from: {file: service.ts, name: create, type_name: UserService}
+        to: {file: repository.ts, name: save, type_name: UserRepository}
+    forbidden:
+      - from: {file: controller.ts, name: create, type_name: UserController}
+        to: {file: controller.ts, name: create, type_name: UserController}
+  - name: python-business-chain
+    language: python
+    fixture: business-chains/python
+    expected: {confirmed: 2}
+    edges:
+      - from: {file: controller.py, name: create, type_name: UserController}
+        to: {file: service.py, name: create, type_name: UserService}
+      - from: {file: service.py, name: create, type_name: UserService}
+        to: {file: repository.py, name: save, type_name: UserRepository}
+    forbidden:
+      - from: {file: controller.py, name: create, type_name: UserController}
+        to: {file: controller.py, name: create, type_name: UserController}

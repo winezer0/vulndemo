@@ -1,0 +1,8 @@
+{
+  "name": "dynamic-dispatch-backend-fixture",
+  "private": true,
+  "main": "registry.ts",
+  "scripts": {
+    "start": "node registry.ts"
+  }
+}

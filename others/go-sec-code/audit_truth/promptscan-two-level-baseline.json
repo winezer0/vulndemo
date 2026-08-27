@@ -1,0 +1,198 @@
+{
+  "report": {
+    "truth_name": "go-sec-code-root-causes-v1",
+    "source_snapshot_digest": "dc28475ab97aa825a07097a966d02bb33f1b74c1549b409967b663743521658e",
+    "metrics": {
+      "truth_findings": 19,
+      "matched_findings": 19,
+      "candidates": 35,
+      "true_positives": 19,
+      "false_positives": 13,
+      "duplicates": 3,
+      "recall": 1,
+      "precision": 0.59375,
+      "file_recall": 1,
+      "model_calls": 71,
+      "tool_calls": 60,
+      "total_tokens": 176202,
+      "duration_ms": 102576
+    },
+    "matches": [
+      {
+        "candidate_id": "AF-008a8a26e84534a6",
+        "truth_id": "GT-SSRF",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-04d4c9f1e2bf0068",
+        "truth_id": "GT-HARDCODED-DB-PASSWORD",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-182df15ae168aba4",
+        "exclusion_id": "EX-SAFE-FILE",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-191cbd8d1f96d343",
+        "exclusion_id": "EX-CONFIG-ENV",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-1ef6a855b703e0a4",
+        "truth_id": "GT-RESEARCH-BODY-DOS",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-2e98c9bfcf2f2e82",
+        "exclusion_id": "EX-TAR-SYMLINK",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-32865a81ef5e3c1e",
+        "exclusion_id": "EX-TAR-UPLOAD-NAME",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-3449f11ab7431f92",
+        "exclusion_id": "EX-SAFE-FILE",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-3b62edd837e40351",
+        "truth_id": "GT-TAR-EXPANSION-DOS",
+        "disposition": "duplicate"
+      },
+      {
+        "candidate_id": "AF-3de1e50371e808b8",
+        "truth_id": "GT-COMMAND-INJECTION",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-44925779c3ada963",
+        "truth_id": "GT-STATIC-ETC-EXPOSURE",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-521b2d5243591cac",
+        "exclusion_id": "EX-CONFIG-ENV",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-58b2e1ccc379fafc",
+        "truth_id": "GT-SSTI-ONE",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-5b4b84de8986cd99",
+        "exclusion_id": "EX-RELIABILITY",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-72bb29c5654d88bd",
+        "truth_id": "GT-RESEARCH-AUTH-RACE",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-7db6bb2c8a1bf55f",
+        "exclusion_id": "EX-SAFE-UPLOAD",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-7de7e4e30056687b",
+        "exclusion_id": "EX-CONFIG-ENV",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-80d59eb920d16532",
+        "truth_id": "GT-RESEARCH-PATH-TRAVERSAL",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-817ac1dd643344a8",
+        "truth_id": "GT-RESEARCH-TEMP-RACE",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-8d3876ad6d7bef92",
+        "truth_id": "GT-SQL-INJECTION",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-8df1c11d775fc1d1",
+        "truth_id": "GT-TAR-PATH-TRAVERSAL",
+        "disposition": "duplicate"
+      },
+      {
+        "candidate_id": "AF-9ce1de7c751b4814",
+        "exclusion_id": "EX-TAR-ERROR",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-9ffc735cb923a934",
+        "truth_id": "GT-FILE-READ-TWO",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-aba1744df6bd5eba",
+        "truth_id": "GT-RESEARCH-TEMP-RACE",
+        "disposition": "duplicate"
+      },
+      {
+        "candidate_id": "AF-adc0a28633eed99f",
+        "truth_id": "GT-RESEARCH-GZIP-DOS",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-b00be4880b082965",
+        "truth_id": "GT-TAR-ENTRY-DOS",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-b7b0064043a676ea",
+        "exclusion_id": "EX-CONFIG-ENV",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-c0d01b35c2c0777c",
+        "exclusion_id": "EX-RELIABILITY",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-c27deff55f7b78bf",
+        "exclusion_id": "EX-CONFIG-ENV",
+        "disposition": "false_positive"
+      },
+      {
+        "candidate_id": "AF-c4e3fca67f167850",
+        "truth_id": "GT-TAR-PATH-TRAVERSAL",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-d23808da830bc40a",
+        "truth_id": "GT-RESEARCH-FLAG-TOCTOU",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-ea3fcb122946a2e1",
+        "truth_id": "GT-GIN-DEBUG",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-f0387013313d8171",
+        "truth_id": "GT-FILE-READ-ONE",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-f3a307ad859718d1",
+        "truth_id": "GT-SSTI-TWO",
+        "disposition": "true_positive"
+      },
+      {
+        "candidate_id": "AF-fb2c86958991bbee",
+        "truth_id": "GT-TAR-EXPANSION-DOS",
+        "disposition": "true_positive"
+      }
+    ]
+  }
+}
