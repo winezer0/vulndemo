@@ -1,3 +1,4 @@
 codeindex.sqlite
 *.sqlite-wal
 *.sqlite-shm
+*.sqlite
