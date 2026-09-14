@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "fixture_count": 28,
+  "aggregate": {
+    "total_calls": 56,
+    "no_candidate_calls": 11,
+    "no_candidate_by_language": {"cpp": 1, "csharp": 2, "go": 4, "java": 1, "kotlin": 1, "php": 1, "typescript": 1},
+    "third_party_binding_missing": 0,
+    "critical_path_no_candidate": 0,
+    "critical_path_third_party_missing": 0,
+    "critical_path_labeled_calls": 2,
+    "controlled_recallable_calls": 0,
+    "controlled_candidate_branches": 2,
+    "controlled_expected_branches": 0,
+    "controlled_labeled_branches": 2,
+    "controlled_false_positive_branches": 2,
+    "controlled_candidate_overflow_calls": 0
+  }
+}
