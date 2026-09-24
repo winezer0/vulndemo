@@ -1,0 +1,2 @@
+database_password: "FictionalYamlPass_82"
+api_token: "{{ TOKEN_FROM_ENV }}"
