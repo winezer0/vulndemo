@@ -1,1 +1,1 @@
-export class Box {}
+export class Box { constructor(value?: number) {} }
