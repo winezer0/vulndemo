@@ -1,2 +1,3 @@
-class Alpha { fun let() {} }
+class Alpha { fun let() {}
+}
 fun Caller(worker: Alpha) { worker.let() }

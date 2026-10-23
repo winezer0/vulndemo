@@ -1,6 +1,9 @@
-interface Worker { fun sink(value: Int) }
-class A : Worker { override fun sink(value: Int) {} }
-class B : Worker { override fun sink(value: Int) {} }
+interface Worker { fun sink(value: Int)
+}
+class A : Worker { override fun sink(value: Int) {}
+}
+class B : Worker { override fun sink(value: Int) {}
+}
 
 fun conflict(flag: Boolean) {
     var p: Worker = A()

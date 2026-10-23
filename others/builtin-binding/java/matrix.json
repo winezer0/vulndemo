@@ -1,0 +1,951 @@
+{
+  "version": 1,
+  "cases": [
+    {
+      "file": "Namespaces.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "type": {
+          "line": 2,
+          "column": 15
+        },
+        "field": {
+          "line": 3,
+          "column": 6
+        },
+        "zero": {
+          "line": 4,
+          "column": 6
+        },
+        "one": {
+          "line": 5,
+          "column": 6
+        },
+        "param": {
+          "line": 6,
+          "column": 15
+        }
+      },
+      "probes": [
+        {
+          "id": "type",
+          "at": {
+            "line": 7,
+            "column": 3
+          },
+          "namespace": "type",
+          "state": "bound",
+          "kind": "type",
+          "declaration": "type",
+          "additional": [],
+          "name": "Token"
+        },
+        {
+          "id": "param",
+          "at": {
+            "line": 8,
+            "column": 11
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "parameter",
+          "declaration": "param",
+          "additional": [],
+          "name": "Token"
+        },
+        {
+          "id": "methods",
+          "at": {
+            "line": 9,
+            "column": 11
+          },
+          "namespace": "method",
+          "state": "bound",
+          "kind": "function",
+          "declaration": "zero",
+          "additional": [
+            "one"
+          ],
+          "name": "Token"
+        },
+        {
+          "id": "valueAtCall",
+          "at": {
+            "line": 9,
+            "column": 11
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "parameter",
+          "declaration": "param",
+          "additional": [],
+          "name": "Token"
+        },
+        {
+          "id": "typeAtCall",
+          "at": {
+            "line": 9,
+            "column": 11
+          },
+          "namespace": "type",
+          "state": "bound",
+          "kind": "type",
+          "declaration": "type",
+          "additional": [],
+          "name": "Token"
+        }
+      ]
+    },
+    {
+      "file": "Initialization.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "field": {
+          "line": 2,
+          "column": 6
+        },
+        "outerI": {
+          "line": 3,
+          "column": 6
+        },
+        "outerItem": {
+          "line": 4,
+          "column": 11
+        },
+        "local": {
+          "line": 7,
+          "column": 7
+        },
+        "a": {
+          "line": 8,
+          "column": 7
+        },
+        "b": {
+          "line": 8,
+          "column": 14
+        },
+        "c": {
+          "line": 8,
+          "column": 21
+        },
+        "i": {
+          "line": 9,
+          "column": 12
+        },
+        "j": {
+          "line": 9,
+          "column": 19
+        },
+        "item": {
+          "line": 13,
+          "column": 15
+        }
+      },
+      "probes": [
+        {
+          "id": "self",
+          "at": {
+            "line": 7,
+            "column": 15
+          },
+          "namespace": "value",
+          "state": "uninitialized",
+          "kind": "variable",
+          "declaration": "local",
+          "additional": [],
+          "name": "value"
+        },
+        {
+          "id": "prior",
+          "at": {
+            "line": 8,
+            "column": 18
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "a",
+          "additional": [],
+          "name": "a"
+        },
+        {
+          "id": "own",
+          "at": {
+            "line": 8,
+            "column": 25
+          },
+          "namespace": "value",
+          "state": "uninitialized",
+          "kind": "variable",
+          "declaration": "c",
+          "additional": [],
+          "name": "c"
+        },
+        {
+          "id": "loopSelf",
+          "at": {
+            "line": 9,
+            "column": 16
+          },
+          "namespace": "value",
+          "state": "uninitialized",
+          "kind": "variable",
+          "declaration": "i",
+          "additional": [],
+          "name": "i"
+        },
+        {
+          "id": "loopPrior",
+          "at": {
+            "line": 9,
+            "column": 23
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "i",
+          "additional": [],
+          "name": "i"
+        },
+        {
+          "id": "condition",
+          "at": {
+            "line": 9,
+            "column": 26
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "i",
+          "additional": [],
+          "name": "i"
+        },
+        {
+          "id": "update",
+          "at": {
+            "line": 9,
+            "column": 33
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "i",
+          "additional": [],
+          "name": "i"
+        },
+        {
+          "id": "body",
+          "at": {
+            "line": 10,
+            "column": 14
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "j",
+          "additional": [],
+          "name": "j"
+        },
+        {
+          "id": "after",
+          "at": {
+            "line": 12,
+            "column": 15
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "outerI",
+          "additional": [],
+          "name": "i"
+        },
+        {
+          "id": "iterable",
+          "at": {
+            "line": 13,
+            "column": 22
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "outerItem",
+          "additional": [],
+          "name": "item"
+        },
+        {
+          "id": "target",
+          "at": {
+            "line": 13,
+            "column": 43
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "item",
+          "additional": [],
+          "name": "item"
+        },
+        {
+          "id": "outside",
+          "at": {
+            "line": 14,
+            "column": 20
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "outerItem",
+          "additional": [],
+          "name": "item"
+        },
+        {
+          "id": "before",
+          "at": {
+            "line": 6,
+            "column": 16
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "field",
+          "additional": [],
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "file": "Closures.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "field": {
+          "line": 2,
+          "column": 9
+        },
+        "captured": {
+          "line": 4,
+          "column": 10
+        },
+        "lambda": {
+          "line": 5,
+          "column": 51
+        },
+        "inner": {
+          "line": 8,
+          "column": 12
+        }
+      },
+      "probes": [
+        {
+          "id": "lambda",
+          "at": {
+            "line": 5,
+            "column": 61
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "parameter",
+          "declaration": "lambda",
+          "additional": [],
+          "name": "value"
+        },
+        {
+          "id": "capture",
+          "at": {
+            "line": 6,
+            "column": 49
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "captured",
+          "additional": [],
+          "name": "captured"
+        },
+        {
+          "id": "field",
+          "at": {
+            "line": 7,
+            "column": 16
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "field",
+          "additional": [],
+          "name": "value"
+        },
+        {
+          "id": "inner",
+          "at": {
+            "line": 8,
+            "column": 41
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "inner",
+          "additional": [],
+          "name": "value"
+        },
+        {
+          "id": "restored",
+          "at": {
+            "line": 9,
+            "column": 18
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "field",
+          "additional": [],
+          "name": "value"
+        }
+      ]
+    },
+    {
+      "file": "Resources.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "field": {
+          "line": 3,
+          "column": 4
+        },
+        "r": {
+          "line": 5,
+          "column": 10
+        },
+        "next": {
+          "line": 5,
+          "column": 33
+        },
+        "e": {
+          "line": 8,
+          "column": 22
+        }
+      },
+      "probes": [
+        {
+          "id": "self",
+          "at": {
+            "line": 5,
+            "column": 21
+          },
+          "namespace": "value",
+          "state": "uninitialized",
+          "kind": "variable",
+          "declaration": "r",
+          "additional": [],
+          "name": "r"
+        },
+        {
+          "id": "prior",
+          "at": {
+            "line": 5,
+            "column": 40
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "r",
+          "additional": [],
+          "name": "r"
+        },
+        {
+          "id": "body",
+          "at": {
+            "line": 6,
+            "column": 10
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "next",
+          "additional": [],
+          "name": "next"
+        },
+        {
+          "id": "capture",
+          "at": {
+            "line": 7,
+            "column": 31
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "r",
+          "additional": [],
+          "name": "r"
+        },
+        {
+          "id": "catchResource",
+          "at": {
+            "line": 9,
+            "column": 12
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "field",
+          "additional": [],
+          "name": "r"
+        },
+        {
+          "id": "catchParameter",
+          "at": {
+            "line": 9,
+            "column": 24
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "parameter",
+          "declaration": "e",
+          "additional": [],
+          "name": "e"
+        },
+        {
+          "id": "finally",
+          "at": {
+            "line": 10,
+            "column": 23
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "field",
+          "additional": [],
+          "name": "r"
+        },
+        {
+          "id": "afterCatch",
+          "at": {
+            "line": 11,
+            "column": 11
+          },
+          "namespace": "value",
+          "state": "absent",
+          "name": "e"
+        },
+        {
+          "id": "beforeNext",
+          "at": {
+            "line": 5,
+            "column": 24
+          },
+          "namespace": "value",
+          "state": "absent",
+          "name": "next"
+        }
+      ]
+    },
+    {
+      "file": "Types.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "classT": {
+          "line": 1,
+          "column": 13
+        },
+        "member": {
+          "line": 2,
+          "column": 15
+        },
+        "methodT": {
+          "line": 4,
+          "column": 3
+        },
+        "local": {
+          "line": 6,
+          "column": 9
+        }
+      },
+      "probes": [
+        {
+          "id": "classType",
+          "at": {
+            "line": 3,
+            "column": 2
+          },
+          "namespace": "type",
+          "state": "bound",
+          "kind": "type",
+          "declaration": "classT",
+          "additional": [],
+          "name": "T"
+        },
+        {
+          "id": "methodType",
+          "at": {
+            "line": 4,
+            "column": 15
+          },
+          "namespace": "type",
+          "state": "bound",
+          "kind": "type",
+          "declaration": "methodT",
+          "additional": [],
+          "name": "T"
+        },
+        {
+          "id": "before",
+          "at": {
+            "line": 5,
+            "column": 3
+          },
+          "namespace": "type",
+          "state": "bound",
+          "kind": "type",
+          "declaration": "member",
+          "additional": [],
+          "name": "Item"
+        },
+        {
+          "id": "self",
+          "at": {
+            "line": 6,
+            "column": 16
+          },
+          "namespace": "type",
+          "state": "bound",
+          "kind": "type",
+          "declaration": "local",
+          "additional": [],
+          "name": "Item"
+        },
+        {
+          "id": "after",
+          "at": {
+            "line": 7,
+            "column": 3
+          },
+          "namespace": "type",
+          "state": "bound",
+          "kind": "type",
+          "declaration": "local",
+          "additional": [],
+          "name": "Item"
+        }
+      ]
+    },
+    {
+      "file": "Members.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "import": {
+          "line": 1,
+          "column": 30
+        },
+        "field": {
+          "line": 3,
+          "column": 6
+        },
+        "method": {
+          "line": 5,
+          "column": 6
+        },
+        "inner": {
+          "line": 7,
+          "column": 20
+        }
+      },
+      "probes": [
+        {
+          "id": "staticOccupancy",
+          "at": {
+            "line": 4,
+            "column": 28
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "field",
+          "additional": [],
+          "name": "value"
+        },
+        {
+          "id": "methodOccupancy",
+          "at": {
+            "line": 6,
+            "column": 22
+          },
+          "namespace": "method",
+          "state": "bound",
+          "kind": "function",
+          "declaration": "method",
+          "additional": [],
+          "name": "abs"
+        },
+        {
+          "id": "inner",
+          "at": {
+            "line": 7,
+            "column": 47
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "field",
+          "declaration": "inner",
+          "additional": [],
+          "name": "value"
+        },
+        {
+          "id": "inherited",
+          "at": {
+            "line": 8,
+            "column": 25
+          },
+          "namespace": "value",
+          "state": "unknown",
+          "name": "missing"
+        }
+      ]
+    },
+    {
+      "file": "Imports.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "abs": {
+          "line": 1,
+          "column": 30
+        }
+      },
+      "probes": [
+        {
+          "id": "imported",
+          "at": {
+            "line": 3,
+            "column": 21
+          },
+          "namespace": "method",
+          "state": "bound",
+          "kind": "import",
+          "declaration": "abs",
+          "additional": [],
+          "name": "abs"
+        }
+      ]
+    },
+    {
+      "file": "Patterns.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "s": {
+          "line": 4,
+          "column": 27
+        },
+        "a": {
+          "line": 5,
+          "column": 27
+        },
+        "b": {
+          "line": 6,
+          "column": 29
+        },
+        "c": {
+          "line": 9,
+          "column": 29
+        }
+      },
+      "probes": [
+        {
+          "id": "true",
+          "at": {
+            "line": 4,
+            "column": 40
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "s",
+          "additional": [],
+          "name": "s"
+        },
+        {
+          "id": "false",
+          "at": {
+            "line": 4,
+            "column": 61
+          },
+          "namespace": "value",
+          "state": "absent",
+          "name": "s"
+        },
+        {
+          "id": "and",
+          "at": {
+            "line": 5,
+            "column": 32
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "a",
+          "additional": [],
+          "name": "a"
+        },
+        {
+          "id": "andBody",
+          "at": {
+            "line": 5,
+            "column": 55
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "a",
+          "additional": [],
+          "name": "a"
+        },
+        {
+          "id": "or",
+          "at": {
+            "line": 6,
+            "column": 35
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "b",
+          "additional": [],
+          "name": "b"
+        },
+        {
+          "id": "orBody",
+          "at": {
+            "line": 6,
+            "column": 58
+          },
+          "namespace": "value",
+          "state": "absent",
+          "name": "b"
+        },
+        {
+          "id": "exit",
+          "at": {
+            "line": 10,
+            "column": 11
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "variable",
+          "declaration": "c",
+          "additional": [],
+          "name": "c"
+        }
+      ]
+    },
+    {
+      "file": "Unsupported.java",
+      "complete": false,
+      "diagnostic": true,
+      "declarations": {
+        "left": {
+          "line": 4,
+          "column": 32
+        }
+      },
+      "probes": [
+        {
+          "id": "recordPattern",
+          "at": {
+            "line": 5,
+            "column": 23
+          },
+          "namespace": "value",
+          "state": "unknown",
+          "name": "left"
+        }
+      ]
+    },
+    {
+      "file": "Calls.java",
+      "complete": true,
+      "diagnostic": false,
+      "declarations": {
+        "field": {
+          "line": 2,
+          "column": 6
+        },
+        "zero": {
+          "line": 3,
+          "column": 6
+        },
+        "one": {
+          "line": 4,
+          "column": 6
+        },
+        "param": {
+          "line": 5,
+          "column": 14
+        }
+      },
+      "probes": [
+        {
+          "id": "overloads",
+          "at": {
+            "line": 6,
+            "column": 11
+          },
+          "namespace": "method",
+          "state": "bound",
+          "kind": "function",
+          "declaration": "zero",
+          "additional": [
+            "one"
+          ],
+          "name": "pick"
+        },
+        {
+          "id": "param",
+          "at": {
+            "line": 8,
+            "column": 10
+          },
+          "namespace": "value",
+          "state": "bound",
+          "kind": "parameter",
+          "declaration": "param",
+          "additional": [],
+          "name": "value"
+        }
+      ],
+      "calls": [
+        {
+          "at": {
+            "line": 6,
+            "column": 11
+          },
+          "declaration": "zero",
+          "signature": "pick()",
+          "receiver": ""
+        },
+        {
+          "at": {
+            "line": 7,
+            "column": 16
+          },
+          "declaration": "one",
+          "signature": "pick(int)",
+          "receiver": "this"
+        }
+      ],
+      "accesses": [
+        {
+          "at": {
+            "line": 8,
+            "column": 23
+          },
+          "declaration": "field",
+          "kind": "reads"
+        }
+      ]
+    }
+  ]
+}
