@@ -1,0 +1,7 @@
+# Preserve the exact bytes of upstream source snapshots, including binary assets.
+commons-cli/** -text
+dapper/** -text
+anyhow/** -text
+psr-log/** -text
+tinycthread/** -text
+tinyxml2/** -text
