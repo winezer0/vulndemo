@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "commit": "f16e1d5863e37f8d8c2a01719f5b34baa2b714d3",
+  "calls": [
+    ["src/LoggerTrait.php",20,"$this->log","emergency","src/LoggerTrait.php",97,"psr\\log\\loggertrait","log"],
+    ["src/LoggerTrait.php",31,"$this->log","alert","src/LoggerTrait.php",97,"psr\\log\\loggertrait","log"],
+    ["src/LoggerTrait.php",41,"$this->log","critical","src/LoggerTrait.php",97,"psr\\log\\loggertrait","log"],
+    ["src/LoggerTrait.php",50,"$this->log","error","src/LoggerTrait.php",97,"psr\\log\\loggertrait","log"],
+    ["src/LoggerTrait.php",61,"$this->log","warning","src/LoggerTrait.php",97,"psr\\log\\loggertrait","log"],
+    ["src/LoggerTrait.php",69,"$this->log","notice","src/LoggerTrait.php",97,"psr\\log\\loggertrait","log"],
+    ["src/LoggerTrait.php",79,"$this->log","info","src/LoggerTrait.php",97,"psr\\log\\loggertrait","log"],
+    ["src/LoggerTrait.php",87,"$this->log","debug","src/LoggerTrait.php",97,"psr\\log\\loggertrait","log"]
+  ]
+}

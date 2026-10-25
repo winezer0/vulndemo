@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "seed": "20261024",
+  "method": "sha256(seed:language:file:line:column), ascending; first five textual candidates outside directed truth lines, from directed source files; no replacement of non-calls",
+  "scope": "Textual member-call stratum, C identifier-call stratum. Not a whole-project probability sample. PHP directed set exhausts all eight production calls.",
+  "reviews": [
+    ["java", "src/main/java/org/apache/commons/cli/Options.java",331,9,"buf.append","external","java.lang.StringBuilder.append; dependency overload not adjudicated"],
+    ["java", "src/main/java/org/apache/commons/cli/Option.java",952,21,"Builder.toType","source","Option.java:65 Option.Builder.toType"],
+    ["java", "src/main/java/org/apache/commons/cli/OptionGroup.java",146,9,"buff.append","external","java.lang.StringBuilder.append; dependency overload not adjudicated"],
+    ["java", "src/main/java/org/apache/commons/cli/Option.java",552,53,"e.getMessage","external","java.lang.Throwable.getMessage via CloneNotSupportedException"],
+    ["java", "src/main/java/org/apache/commons/cli/OptionGroup.java",158,17,"buff.append","external","java.lang.StringBuilder.append; dependency overload not adjudicated"],
+    ["csharp","SqlMapper.TypeDeserializerCache.cs",149,25,"readers.TryGetValue","external","System.Collections.Generic.Dictionary.TryGetValue"],
+    ["csharp","SqlMapper.cs",971,10,"System.Diagnostics.CodeAnalysis.SuppressMessage","non_call","attribute construction; outside ordinary member-call stratum"],
+    ["csharp","SqlMapper.cs",2954,33,"il.EmitCall","external","System.Reflection.Emit.ILGenerator.EmitCall"],
+    ["csharp","SqlMapper.cs",820,10,"System.Diagnostics.CodeAnalysis.SuppressMessage","non_call","attribute construction; outside ordinary member-call stratum"],
+    ["csharp","SqlMapper.cs",1577,31,"results.ToList","external","System.Linq.Enumerable.ToList; extension lookup needs dependency facts"],
+    ["rust","src/context.rs",182,23,"s.escape_debug","external","str::escape_debug in the standard library"],
+    ["rust","src/error.rs",885,65,"source.inner.by_mut","source","src/ptr.rs:55 Own::by_mut; source.inner is Error::inner Own<ErrorImpl>"],
+    ["rust","src/context.rs",54,31,"error.ext_context","dynamic","ext::StdError::ext_context; generic E may select either applicable implementation; no unique runtime target"],
+    ["rust","src/error.rs",117,78,"report.into_boxed","non_call","rustdoc example only"],
+    ["rust","src/error.rs",978,43,"this.by_ref","source","src/ptr.rs:167 Mut::by_ref; this is Mut<ErrorImpl>"],
+    ["c","test/test.c",112,21,"program","non_call","block comment"],
+    ["c","source/tinycthread.c",389,5,"defined","non_call","preprocessor condition"],
+    ["c","source/tinycthread.c",63,5,"pthread_mutexattr_settype","external","POSIX pthread_mutexattr_settype; POSIX branch only"],
+    ["c","source/tinycthread.c",125,10,"pthread_mutex_unlock","external","POSIX pthread_mutex_unlock; POSIX branch only"],
+    ["c","source/tinycthread.c",66,3,"pthread_mutexattr_destroy","external","POSIX pthread_mutexattr_destroy; POSIX branch only"],
+    ["cpp","tinyxml2.cpp",1600,5,"_value.SetStr","source","tinyxml2.cpp:199 tinyxml2::StrPair::SetStr"],
+    ["cpp","tinyxml2.cpp",1239,32,"element->Name","source","tinyxml2.h:1272 tinyxml2::XMLElement::Name; recovered header declaration gap remains"],
+    ["cpp","tinyxml2.cpp",1525,10,"XMLAttribute::QueryBoolValue","non_call","out-of-line method definition"],
+    ["cpp","tinyxml2.cpp",2357,10,"XMLDocument::LoadFile","non_call","out-of-line method definition"],
+    ["cpp","tinyxml2.cpp",2635,19,"_buffer.PushArr","source","tinyxml2.h:230 tinyxml2::DynArray::PushArr; template instantiation is not adjudicated"]
+  ]
+}

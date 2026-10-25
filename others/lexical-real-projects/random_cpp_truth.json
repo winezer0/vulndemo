@@ -1,0 +1,1 @@
+{"version":1,"commit":"321ea883b7190d4e85cae5512a12e5eaa8f8731f","calls":[["tinyxml2.cpp",1600,"_value.SetStr","SetAttribute","tinyxml2.cpp",199,"tinyxml2::StrPair","SetStr"],["tinyxml2.cpp",1239,"element->Name","ToElementWithName","tinyxml2.h",1272,"tinyxml2::XMLElement","Name"],["tinyxml2.cpp",2635,"_buffer.PushArr","Print","tinyxml2.h",230,"tinyxml2::DynArray","PushArr"]]}
