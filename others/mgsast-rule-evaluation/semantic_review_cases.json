@@ -1,0 +1,81 @@
+{
+  "schema_version": "rule-semantic-review-cases/v1",
+  "scope": "matched_rule_candidates_only",
+  "target": "../go-sec-code",
+  "target_revision": "4d1bfccc54d99cf6f4d9dbd88d4c463ddcc51913",
+  "recorded_session": "sess-a609049634bdd54306a15340",
+  "limitations": [
+    "These are source-reviewed counterexamples and positive controls, not a complete vulnerability oracle.",
+    "Review the mechanism and its premises; status equality alone does not establish semantic accuracy.",
+    "No recall claim is made about vulnerabilities outside the matched Candidate set."
+  ],
+  "cases": [
+    {
+      "candidate_id": "AF-0bc832d6fc88022d",
+      "class_id": "injection.command",
+      "file": "pkg/handler/unsafe/exec.go",
+      "line": 21,
+      "recorded_explanation_assessment": "mechanism_supported",
+      "source_facts": [
+        "The handler obtains host from c.GetQuery.",
+        "fmt.Sprintf inserts host into a shell command.",
+        "exec.Command invokes /bin/bash with -c and that command."
+      ],
+      "review_requirement": "Preserve shell interpretation as the mechanism; do not claim that an arbitrary graph edge alone proves controllability."
+    },
+    {
+      "candidate_id": "AF-a9a55a246f36fb03",
+      "class_id": "file.access",
+      "file": "pkg/handler/safe/file.go",
+      "line": 15,
+      "recorded_explanation_assessment": "claim_contradicted",
+      "source_facts": [
+        "The source applies filepath.Clean to a slash-prefixed input and then filepath.Join with ./.",
+        "The recorded claim that Go Join discards ./ for /etc/passwd was contradicted by the standalone Go check."
+      ],
+      "unresolved_facts": [
+        "Other risks involving readable working-directory contents or deployment-specific links require their own mechanism and premises."
+      ],
+      "review_requirement": "Do not confirm arbitrary absolute-file access using the contradicted Join claim, or infer that every possible file-access risk is absent."
+    },
+    {
+      "candidate_id": "AF-69eb7d8656fb028b",
+      "class_id": "network.ssrf",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 82,
+      "recorded_explanation_assessment": "confirmation_not_established",
+      "source_facts": [
+        "DialContext resolves the hostname, checks each returned IP and passes the checked IP to net.Dial.",
+        "CheckRedirect rejects redirects."
+      ],
+      "unresolved_facts": [
+        "A specific unblocked restricted destination and its relevant reachability have not been established by the recorded explanation."
+      ],
+      "review_requirement": "Do not claim DNS rebinding or redirect bypass merely because the filter is a blacklist; require a source-consistent bypass mechanism."
+    },
+    {
+      "candidate_id": "AF-d13bd820612ee9af",
+      "class_id": "resource.unbounded_read",
+      "file": "pkg/handler/research/unzipBody.go",
+      "line": 19,
+      "recorded_explanation_assessment": "mechanism_supported_remediation_needs_review",
+      "source_facts": [
+        "A gzip reader is created over the request body.",
+        "ReadAll buffers decompressed output without an explicit decoded-byte limit."
+      ],
+      "review_requirement": "Bound decoded output separately from compressed input. LimitReader bounds reads but does not itself return an overflow error; an explicit overflow policy needs an additional check."
+    },
+    {
+      "candidate_id": "AF-0cd42bd99f389ff8",
+      "class_id": "concurrency.toctou",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "recorded_explanation_assessment": "external_premise_unresolved",
+      "source_facts": [
+        "Ordinary archive-driven file creation does not by itself establish symlink creation or replacement capability.",
+        "The relative ./tmp path and ModePerm argument do not establish actual deployment ownership or effective permissions."
+      ],
+      "review_requirement": "Preserve specific actor and directory-entry capability gaps; do not force confirmation or rejection from an unknown deployment premise."
+    }
+  ]
+}
