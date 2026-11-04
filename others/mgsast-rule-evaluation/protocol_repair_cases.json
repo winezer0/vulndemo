@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "selection": "Union of protocol repairs, invalid decision publications and missing model receipts across the seven listed historical runs; no verdict oracle",
+  "historical_runs": [
+    "mgsast-v45-focused-live-20261104-r2",
+    "mgsast-v45-focused-live-20261104-r7",
+    "mgsast-v45-joint-live-20261104",
+    "mgsast-v46-joint-live-20261104-r5",
+    "mgsast-v47-joint-live-20261104-r2",
+    "mgsast-v47-retry-rule04-20261104",
+    "mgsast-v47-final-profiles-20261104"
+  ],
+  "baseline": "mgsast-v47-joint-live-20261104-r2",
+  "profiles": {
+    "rule": [
+      "AF-030342ba3466cb00", "AF-044b4e2e68d16796", "AF-072eeb1e5576aee4", "AF-0aac5a5026fdb6ae",
+      "AF-0cd42bd99f389ff8", "AF-10ed6ca956691cfb", "AF-2760b01a63a8838c", "AF-385fa305a334f124",
+      "AF-39f773526648b89d", "AF-3d4bb9eac427e32d", "AF-3f94ae1cba5076c3", "AF-419308760f6df01a",
+      "AF-46a55b18ba3785da", "AF-4b37d92806c0be6e", "AF-4c1e1939d0f847c1", "AF-73f6d9ff4769a682",
+      "AF-873df385eaaa5b24", "AF-8e5cdbf3acff87e5", "AF-9ea5e6dbe51a1161", "AF-bff97dd8a2ee4f3a",
+      "AF-c4cea790ddfd911b", "AF-c7f47703148a5a02", "AF-c99ca893811f484c", "AF-cd6a5c4de27cbd2f",
+      "AF-d059f7ab8a57397c", "AF-d13bd820612ee9af", "AF-d2839d32b65d5cda", "AF-dbd6924e88f4f25f",
+      "AF-dd48bdfedc41a3e6", "AF-e3af12756e218290", "AF-ec5aa95825e8e27d", "AF-f71bda5420a5ac74"
+    ],
+    "multiagent": ["AF-0dc5a4d58f50f7f8", "AF-76b315a549ef458b", "AF-8505150b9f509d70", "AF-85352ac985b6f60e", "AF-a0ac32c9c96a09da"],
+    "prompt": ["review-0501f0dcf15656aac584b00e", "review-1f95468db907ca51050a9be2"]
+  },
+  "source_cases": [
+    {
+      "name": "multiline transcription loses indentation and CRLF",
+      "file": "pkg/handler/research/read_body.go",
+      "body_start_line": 17,
+      "body_end_line": 30,
+      "line": 28,
+      "snippet": "hw := io.MultiWriter(file)\nio.Copy(hw, c.Request.Body)",
+      "corrected_line": 29,
+      "corrected_snippet": "io.Copy(hw, c.Request.Body)"
+    },
+    {
+      "name": "single line repair retains the old line",
+      "file": "pkg/handler/research/read_body.go",
+      "body_start_line": 17,
+      "body_end_line": 30,
+      "line": 28,
+      "snippet": "io.Copy(hw, c.Request.Body)",
+      "corrected_line": 29,
+      "corrected_snippet": "io.Copy(hw, c.Request.Body)"
+    }
+  ]
+}

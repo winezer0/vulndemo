@@ -1,0 +1,119 @@
+{
+  "report": {
+    "candidates": {
+      "candidates": [
+        {
+          "id": "one",
+          "status": "needs_review",
+          "model_review_status": "needs_review"
+        },
+        {
+          "id": "alias",
+          "status": "needs_review",
+          "model_review_status": "needs_review"
+        }
+      ]
+    },
+    "metadata": {
+      "model_review_complete": true
+    }
+  },
+  "work": {
+    "groups": [
+      {
+        "items": [
+          {
+            "candidate": {
+              "id": "one"
+            },
+            "source_candidate_ids": [
+              "one",
+              "alias"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "validity": {
+    "one": {
+      "valid": true
+    },
+    "alias": {
+      "valid": true
+    }
+  },
+  "events": [
+    {
+      "event": "model_request",
+      "task_id": "one",
+      "role": "verifier",
+      "attempt": 0,
+      "action_id": "call-1"
+    },
+    {
+      "event": "protocol_repair",
+      "task_id": "one",
+      "role": "verifier",
+      "attempt": 1,
+      "detail_code": "semantic_validation_failed",
+      "field": "source_snippet"
+    },
+    {
+      "event": "model_request",
+      "task_id": "one",
+      "role": "verifier",
+      "attempt": 1,
+      "action_id": "call-1"
+    },
+    {
+      "event": "action_finished",
+      "action_kind": "model_call",
+      "task_id": "one",
+      "role": "verifier",
+      "attempt": 1,
+      "action_id": "call-1",
+      "total_tokens": 100,
+      "prompt_tokens": 80,
+      "completion_tokens": 20
+    },
+    {
+      "event": "action_finished",
+      "action_kind": "model_call",
+      "task_id": "one",
+      "role": "verifier",
+      "attempt": 2,
+      "action_id": "call-1",
+      "total_tokens": 200,
+      "prompt_tokens": 180,
+      "completion_tokens": 20
+    }
+  ],
+  "conversation": [
+    {
+      "event": "tool_response",
+      "action_name": "submit_verification",
+      "task_id": "one",
+      "role": "verifier",
+      "attempt": 1,
+      "status": "error",
+      "error": "invalid source"
+    },
+    {
+      "event": "tool_response",
+      "action_name": "repair_verification",
+      "task_id": "one",
+      "role": "verifier",
+      "attempt": 1,
+      "status": "success"
+    },
+    {
+      "event": "tool_response",
+      "action_name": "submit_verification",
+      "task_id": "one",
+      "role": "verifier",
+      "attempt": 2,
+      "status": "success"
+    }
+  ]
+}

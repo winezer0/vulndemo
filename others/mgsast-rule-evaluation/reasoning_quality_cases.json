@@ -1,0 +1,29 @@
+{
+  "purpose": "Human semantic review rubric; not a fixed verdict oracle or a production gate",
+  "cases": [
+    {
+      "file": "pkg/handler/research/read_body.go",
+      "focus": "File descriptor lifetime",
+      "checks": ["Distinguish unlink from Close", "Do not infer Close at function return", "Consider GC cleanup before claiming permanent or inevitable exhaustion"],
+      "bad_reason": "Function return and os.Remove close the acquired handle"
+    },
+    {
+      "file": "pkg/handler/unsafe/ssti.go",
+      "focus": "Template evaluation versus claimed impact",
+      "checks": ["Separate attacker-controlled template source from template data", "Check exposed methods before claiming arbitrary file write", "Safe probe and expected observation must describe the same operation"],
+      "bad_reason": "A field-reflection probe proves an uploaded file was written"
+    },
+    {
+      "file": "pkg/handler/unsafe/untar.go",
+      "focus": "Archive entry path boundary",
+      "checks": ["Distinguish uploaded filename validation from archive hdr.Name validation", "Resolve the described parent-directory count consistently", "Query truncation does not erase an already returned valid execution path"],
+      "bad_reason": "Sanitizing the uploaded filename proves internal archive entry names are safe"
+    },
+    {
+      "file": "main.go",
+      "focus": "Startup and shutdown race",
+      "checks": ["Identify the shared read and write and synchronization relation", "Separate local signal capability from remote attacker control", "A nondeterministic schedule does not by itself refute a race"],
+      "bad_reason": "A race is absent because a particular scheduler interleaving is not guaranteed"
+    }
+  ]
+}

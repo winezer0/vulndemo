@@ -1,0 +1,2606 @@
+{
+  "schema_version": "rule-joint-regression/v1",
+  "additional_profiles": [
+    {
+      "profile": "multiagent",
+      "scan_report": "mgsast/.mgsast/sessions/sess-0c4ceedbea55b2272683bdb1/scan/revisions/000001/result.json",
+      "sha256": "5c759ccfe2ae6284de25a0ae7abccda9ea54e36c9f3a156b6b0715fb37dcdef2",
+      "candidate_ids": [
+        "AF-0dc5a4d58f50f7f8",
+        "AF-3299ba8881087700",
+        "AF-76b315a549ef458b",
+        "AF-8505150b9f509d70",
+        "AF-85352ac985b6f60e",
+        "AF-a0ac32c9c96a09da"
+      ]
+    },
+    {
+      "profile": "prompt",
+      "scan_report": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/scan/revisions/000001/result.json",
+      "sha256": "3a65283699b974eaff579ad74bd07d0ea04b69c78a6e7e3eaec22a76365a0939",
+      "candidate_ids": [
+        "review-0501f0dcf15656aac584b00e",
+        "review-0f6cdec3f3de28ea1f68d76b",
+        "review-1f95468db907ca51050a9be2",
+        "review-29f3ee635830f7d852d91a78",
+        "review-4917838af912075f193d851d",
+        "review-6ddd4b64af375c0231fd585d",
+        "review-8f1662d539d33dddf55d8c83",
+        "review-c093dd04cb80f832f47658f1",
+        "review-c46b7072a1e5a073f08c2965",
+        "review-cdb0b6299fac540fa448da4f",
+        "review-eeea81eebe774d4f2ba1823d",
+        "review-f3e6cc6191814a2156b1ab75"
+      ]
+    }
+  ],
+  "target": "../go-sec-code",
+  "reports_inspected": 104,
+  "scope": "All available terminal engineering failures; retain legacy and other-profile history separately without relabeling their identities.",
+  "families": [
+    "static_narrative",
+    "source_binding",
+    "reference_feedback",
+    "classification",
+    "operation_identity",
+    "partial_repair",
+    "uncertainty",
+    "resource_trigger",
+    "independent_review",
+    "query_recovery"
+  ],
+  "cases": [
+    {
+      "candidate_id": "AF-8473f29d592e5d51",
+      "file": "pkg/handler/unsafe/exec.go",
+      "line": 21,
+      "rule": "Go - os/exec.Cmd.Output",
+      "source_sha256": "b47459e0eef607c0dd7a2233b354cf52d18c5e32f0511ecd556d488688f3a736",
+      "history": [
+        "AF-8473f29d592e5d51"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-bf7fe08c4336e967",
+      "file": "pkg/handler/unsafe/exec.go",
+      "line": 21,
+      "rule": "Go - os/exec.Command",
+      "source_sha256": "b47459e0eef607c0dd7a2233b354cf52d18c5e32f0511ecd556d488688f3a736",
+      "history": [
+        "AF-bf7fe08c4336e967"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-dd53c26b9c49a914",
+      "file": "pkg/handler/unsafe/sqli.go",
+      "line": 22,
+      "rule": "Go - database/sql.DB.QueryContext",
+      "source_sha256": "e41f9c219188cdff601403805c0ca7b081b4053216249c2767ccc5bde1a29c19",
+      "history": [
+        "AF-dd53c26b9c49a914"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-6b125e42ff2d73d8",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 27,
+      "rule": "Go - html/template.Template.Parse",
+      "source_sha256": "799111cdad073dc8813535e44955ab255bb5c0d7777c2e6436147e0e925c7ae0",
+      "history": [
+        "AF-6b125e42ff2d73d8"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-2d156309e3404a72",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 54,
+      "rule": "Go - html/template.Template.Parse",
+      "source_sha256": "799111cdad073dc8813535e44955ab255bb5c0d7777c2e6436147e0e925c7ae0",
+      "history": [
+        "AF-2d156309e3404a72"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-66d5f147b9369ffa",
+      "file": "pkg/handler/safe/exec.go",
+      "line": 28,
+      "rule": "Go - command execution syntax",
+      "source_sha256": "14b89338fe01475eb5b2d9defae675ccfe466c2f337198e10c979cf07a324ffa",
+      "history": [
+        "AF-66d5f147b9369ffa"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-0bc832d6fc88022d",
+      "file": "pkg/handler/unsafe/exec.go",
+      "line": 21,
+      "rule": "Go - command execution syntax",
+      "source_sha256": "b47459e0eef607c0dd7a2233b354cf52d18c5e32f0511ecd556d488688f3a736",
+      "history": [
+        "AF-0bc832d6fc88022d"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-a9a55a246f36fb03",
+      "file": "pkg/handler/safe/file.go",
+      "line": 15,
+      "rule": "Go - os.Open",
+      "source_sha256": "3ddaddd0074347df9b523266591ba83e2513cbd648d369f1001cdf6d0f13485d",
+      "history": [],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-aa3821f9f9a74578",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 16,
+      "rule": "Go - os.Open",
+      "source_sha256": "e7ef28390e5cd39fe0effb19418596433d59245ce1aa5c29053b8fdc275f3e18",
+      "history": [
+        "AF-aa3821f9f9a74578"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-030342ba3466cb00",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 17,
+      "rule": "Go - os.Open",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-030342ba3466cb00"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-4c1e1939d0f847c1",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "Go - os.Create",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-4c1e1939d0f847c1"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-0e7bf29d3f5921f3",
+      "file": "pkg/handler/research/cleanPath.go",
+      "line": 15,
+      "rule": "Go - filesystem path containment",
+      "source_sha256": "d1bf8eb5a6aa47da44cd2217be073726891ea4619d40f9a60bc68ad1370eddf7",
+      "history": [
+        "AF-0e7bf29d3f5921f3"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-3f94ae1cba5076c3",
+      "file": "pkg/handler/research/cleanPath.go",
+      "line": 18,
+      "rule": "Go - path.Join",
+      "source_sha256": "d1bf8eb5a6aa47da44cd2217be073726891ea4619d40f9a60bc68ad1370eddf7",
+      "history": [
+        "AF-3f94ae1cba5076c3"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-c99ca893811f484c",
+      "file": "pkg/handler/research/cleanPath.go",
+      "line": 18,
+      "rule": "Go - filepath.Join",
+      "source_sha256": "d1bf8eb5a6aa47da44cd2217be073726891ea4619d40f9a60bc68ad1370eddf7",
+      "history": [
+        "AF-c99ca893811f484c"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-c4cea790ddfd911b",
+      "file": "pkg/handler/safe/file.go",
+      "line": 13,
+      "rule": "Go - path.Join",
+      "source_sha256": "3ddaddd0074347df9b523266591ba83e2513cbd648d369f1001cdf6d0f13485d",
+      "history": [
+        "AF-c4cea790ddfd911b"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-f71bda5420a5ac74",
+      "file": "pkg/handler/safe/file.go",
+      "line": 13,
+      "rule": "Go - filepath.Join",
+      "source_sha256": "3ddaddd0074347df9b523266591ba83e2513cbd648d369f1001cdf6d0f13485d",
+      "history": [
+        "AF-f71bda5420a5ac74"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-385fa305a334f124",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 14,
+      "rule": "Go - path.Join",
+      "source_sha256": "e7ef28390e5cd39fe0effb19418596433d59245ce1aa5c29053b8fdc275f3e18",
+      "history": [
+        "AF-385fa305a334f124"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-39f773526648b89d",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 14,
+      "rule": "Go - filepath.Join",
+      "source_sha256": "e7ef28390e5cd39fe0effb19418596433d59245ce1aa5c29053b8fdc275f3e18",
+      "history": [
+        "AF-39f773526648b89d"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-873df385eaaa5b24",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 41,
+      "rule": "Go - path.Join",
+      "source_sha256": "e7ef28390e5cd39fe0effb19418596433d59245ce1aa5c29053b8fdc275f3e18",
+      "history": [
+        "AF-873df385eaaa5b24"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-4b37d92806c0be6e",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 41,
+      "rule": "Go - filepath.Join",
+      "source_sha256": "e7ef28390e5cd39fe0effb19418596433d59245ce1aa5c29053b8fdc275f3e18",
+      "history": [
+        "AF-4b37d92806c0be6e"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-c5aacc8eac0a1e6b",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "Go - filesystem path containment",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-c5aacc8eac0a1e6b"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-b5255a440e62b001",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 33,
+      "rule": "Go - net/http.Get",
+      "source_sha256": "5787455e1abb1f8c539e9f2e352e093a7b9e1917c0c7f67bb9aad6079a7c436f",
+      "history": [
+        "AF-b5255a440e62b001"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-69eb7d8656fb028b",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 82,
+      "rule": "Go - net/http.NewRequest",
+      "source_sha256": "a4751df10160a705a5ce5401fcd5d91103cf770b1b5f289e4ca1b66e0856c38e",
+      "history": [
+        "AF-69eb7d8656fb028b"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-ec5aa95825e8e27d",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 87,
+      "rule": "Go - net/http.Client.Do",
+      "source_sha256": "a4751df10160a705a5ce5401fcd5d91103cf770b1b5f289e4ca1b66e0856c38e",
+      "history": [],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-86a275b1e7bd09f1",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 27,
+      "rule": "Go - html/template.New",
+      "source_sha256": "799111cdad073dc8813535e44955ab255bb5c0d7777c2e6436147e0e925c7ae0",
+      "history": [
+        "AF-86a275b1e7bd09f1"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-d059f7ab8a57397c",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 54,
+      "rule": "Go - html/template.New",
+      "source_sha256": "799111cdad073dc8813535e44955ab255bb5c0d7777c2e6436147e0e925c7ae0",
+      "history": [
+        "AF-d059f7ab8a57397c"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-b246cbe2309ce3de",
+      "file": "pkg/conf/conf.go",
+      "line": 18,
+      "rule": "Go - literal credential assignment",
+      "source_sha256": "15c35af074f3bf3eee9cad827dc4c35042dd1233626f20e2a7995f98a542a030",
+      "history": [
+        "AF-b246cbe2309ce3de"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-52abbaf81c9c1b70",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 36,
+      "rule": "Go - literal credential assignment",
+      "source_sha256": "799111cdad073dc8813535e44955ab255bb5c0d7777c2e6436147e0e925c7ae0",
+      "history": [
+        "AF-52abbaf81c9c1b70"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-419308760f6df01a",
+      "file": "main.go",
+      "line": 15,
+      "rule": "Go - concurrent state audit",
+      "source_sha256": "eb15a9e183842c82e5e9d5d2504c3e96c78d9c14eb9a9b4f3d721a1795477350",
+      "history": [
+        "AF-419308760f6df01a"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-596e8312f8d3a798",
+      "file": "pkg/conf/conf.go",
+      "line": 103,
+      "rule": "Go - concurrent state audit",
+      "source_sha256": "15c35af074f3bf3eee9cad827dc4c35042dd1233626f20e2a7995f98a542a030",
+      "history": [
+        "AF-596e8312f8d3a798"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-0aac5a5026fdb6ae",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 34,
+      "rule": "Go - concurrent state audit",
+      "source_sha256": "5787455e1abb1f8c539e9f2e352e093a7b9e1917c0c7f67bb9aad6079a7c436f",
+      "history": [
+        "AF-0aac5a5026fdb6ae"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-40ab06cba743645e",
+      "file": "pkg/core/server.go",
+      "line": 19,
+      "rule": "Go - debug configuration signal",
+      "source_sha256": "f7b0f0c57ed9e196393a77e6eaf65b5f459dd6b32b4bab87e40585c065e9de94",
+      "history": [
+        "AF-40ab06cba743645e"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-044b4e2e68d16796",
+      "file": "pkg/conf/conf.go",
+      "line": 38,
+      "rule": "Go - os.Getenv",
+      "source_sha256": "15c35af074f3bf3eee9cad827dc4c35042dd1233626f20e2a7995f98a542a030",
+      "history": [
+        "AF-044b4e2e68d16796"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-73f6d9ff4769a682",
+      "file": "pkg/handler/research/cleanPath.go",
+      "line": 21,
+      "rule": "Go - ioutil.ReadFile",
+      "source_sha256": "d1bf8eb5a6aa47da44cd2217be073726891ea4619d40f9a60bc68ad1370eddf7",
+      "history": [
+        "AF-73f6d9ff4769a682"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-072eeb1e5576aee4",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 43,
+      "rule": "Go - ioutil.ReadFile",
+      "source_sha256": "e7ef28390e5cd39fe0effb19418596433d59245ce1aa5c29053b8fdc275f3e18",
+      "history": [
+        "AF-072eeb1e5576aee4"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-3d4bb9eac427e32d",
+      "file": "pkg/handler/research/unzipBody.go",
+      "line": 12,
+      "rule": "Go - archive expansion budget",
+      "source_sha256": "d02ef96aa4af5a978ee7fd720cfdf589cefdb5a8750831a0cb1ca1d6d615bc87",
+      "history": [
+        "AF-3d4bb9eac427e32d"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-d2839d32b65d5cda",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 30,
+      "rule": "Go - archive expansion budget",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-d2839d32b65d5cda"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-a9602e95e53c6ae7",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 43,
+      "rule": "Go - archive expansion budget",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-a9602e95e53c6ae7"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-cd6a5c4de27cbd2f",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 18,
+      "rule": "Go - HTTP response resource release",
+      "source_sha256": "5787455e1abb1f8c539e9f2e352e093a7b9e1917c0c7f67bb9aad6079a7c436f",
+      "history": [
+        "AF-cd6a5c4de27cbd2f"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-8e5cdbf3acff87e5",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 33,
+      "rule": "Go - HTTP response resource release",
+      "source_sha256": "5787455e1abb1f8c539e9f2e352e093a7b9e1917c0c7f67bb9aad6079a7c436f",
+      "history": [
+        "AF-8e5cdbf3acff87e5"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-2760b01a63a8838c",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 22,
+      "rule": "Go - file resource release",
+      "source_sha256": "bbf8322e3c76555212b22b34ad351d896a485fa3cb42dce6cf6da7b3451f7d85",
+      "history": [
+        "AF-2760b01a63a8838c"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-bff97dd8a2ee4f3a",
+      "file": "pkg/handler/safe/file.go",
+      "line": 15,
+      "rule": "Go - file resource release",
+      "source_sha256": "3ddaddd0074347df9b523266591ba83e2513cbd648d369f1001cdf6d0f13485d",
+      "history": [
+        "AF-bff97dd8a2ee4f3a"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-dd48bdfedc41a3e6",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 16,
+      "rule": "Go - file resource release",
+      "source_sha256": "e7ef28390e5cd39fe0effb19418596433d59245ce1aa5c29053b8fdc275f3e18",
+      "history": [
+        "AF-dd48bdfedc41a3e6"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-424ecc23099eddf9",
+      "file": "pkg/handler/unsafe/ssrf.go",
+      "line": 11,
+      "rule": "Go - HTTP response resource release",
+      "source_sha256": "0b035b802e3d0847380cb67b4290c3f9b2616580fd42d849cec1844dd201ac2f",
+      "history": [
+        "AF-424ecc23099eddf9"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-dbd6924e88f4f25f",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 45,
+      "rule": "Go - archive entry count budget",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-dbd6924e88f4f25f"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-7560dd0f163f36c2",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "Go - file resource release",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-7560dd0f163f36c2"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-65fd90abaa474ff9",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 67,
+      "rule": "Go - connection effective deadline",
+      "source_sha256": "a4751df10160a705a5ce5401fcd5d91103cf770b1b5f289e4ca1b66e0856c38e",
+      "history": [
+        "AF-65fd90abaa474ff9"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-46a55b18ba3785da",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 87,
+      "rule": "Go - HTTP effective request deadline",
+      "source_sha256": "a4751df10160a705a5ce5401fcd5d91103cf770b1b5f289e4ca1b66e0856c38e",
+      "history": [
+        "AF-46a55b18ba3785da"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-c7f47703148a5a02",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 29,
+      "rule": "Go - stream copy byte budget",
+      "source_sha256": "bbf8322e3c76555212b22b34ad351d896a485fa3cb42dce6cf6da7b3451f7d85",
+      "history": [
+        "AF-c7f47703148a5a02"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-d13bd820612ee9af",
+      "file": "pkg/handler/research/unzipBody.go",
+      "line": 19,
+      "rule": "Go - stream read byte budget",
+      "source_sha256": "d02ef96aa4af5a978ee7fd720cfdf589cefdb5a8750831a0cb1ca1d6d615bc87",
+      "history": [
+        "AF-d13bd820612ee9af"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-10ed6ca956691cfb",
+      "file": "pkg/handler/unsafe/ssrf.go",
+      "line": 17,
+      "rule": "Go - stream read byte budget",
+      "source_sha256": "0b035b802e3d0847380cb67b4290c3f9b2616580fd42d849cec1844dd201ac2f",
+      "history": [
+        "AF-10ed6ca956691cfb"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-9ea5e6dbe51a1161",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 68,
+      "rule": "Go - stream copy byte budget",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-9ea5e6dbe51a1161"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-e3af12756e218290",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 22,
+      "rule": "Go - file creation atomicity",
+      "source_sha256": "bbf8322e3c76555212b22b34ad351d896a485fa3cb42dce6cf6da7b3451f7d85",
+      "history": [
+        "AF-e3af12756e218290"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    },
+    {
+      "candidate_id": "AF-0cd42bd99f389ff8",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "Go - file creation atomicity",
+      "source_sha256": "45a2afda89d1bc707c1629a7cf569f8e46136cd0781e218fd72358642366daf5",
+      "history": [
+        "AF-0cd42bd99f389ff8"
+      ],
+      "acceptance": "valid_review_not_fixed_status"
+    }
+  ],
+  "history": [
+    {
+      "historical_id": "AF-030342ba3466cb00",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 17,
+      "rule": "Go - os.Open",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_missing_source_evidence",
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-044b4e2e68d16796",
+      "profile": "rule",
+      "file": "pkg/conf/conf.go",
+      "line": 38,
+      "rule": "Go - os.Getenv",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-072eeb1e5576aee4",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 43,
+      "rule": "Go - ioutil.ReadFile",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v89.json",
+          "sha256": "1c6d391bfd15ae0f132b8846a14d09a47cc6ba65cee7458ac92652cafb23673b"
+        },
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v90.json",
+          "sha256": "c11762a89b570a2071c885e3edcfc06a21cfdd5748a4a346673672bfd9ae43fd"
+        },
+        {
+          "path": "gobuild/mgsast-rule-v41-live-20261103-batch03/verify/revisions/000001/result.json",
+          "sha256": "942001d0cd3fe512749caf0a045a7452555b47be94e8806c804d2dc78c3d3278"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-29b9bdea573cfc5f9a32ea98/verify/revisions/000001/result.json",
+          "sha256": "2a7bde2d6001c159151a4250dedd397f04d8ba17dc267d17558dadae36217bb2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4fe69035f6983cf0b7e7fee5/verify/revisions/000001/result.json",
+          "sha256": "8bf438493c3caedb02d785a9aa92f9d256da3416416d8436a3843c6f43453cb2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-60d7d1828188fc540ff4afc3/verify/revisions/000001/result.json",
+          "sha256": "e264007d0970fff6ce1e5a5dda6ff6627490719a44855f2280785e69fd79c579"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-60d7d1828188fc540ff4afc3/verify/revisions/000002/result.json",
+          "sha256": "f40fdafd07a4ec03b7fb27acea46e6eb241380aaf6e30157b4117b2b7908d2b6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-d75023f6ed308a2abe721ca7/verify/revisions/000001/result.json",
+          "sha256": "4c6cfeb75e67def2e54c760a5e6b0a457b91d8c6e08b6517243c4f24a3bc3af2"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-0aac5a5026fdb6ae",
+      "profile": "rule",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 34,
+      "rule": "Go - concurrent state audit",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-43f8bec53983ef58cedaedc3/verify/revisions/000001/result.json",
+          "sha256": "12c9391f8b1ce67f7a363167f8a96aa29556c7bcac12af8bf4c2c41e8b88d8c6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4fe69035f6983cf0b7e7fee5/verify/revisions/000001/result.json",
+          "sha256": "8bf438493c3caedb02d785a9aa92f9d256da3416416d8436a3843c6f43453cb2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eeecb62219a95e1c17b64def/verify/revisions/000001/result.json",
+          "sha256": "fa9f10aa2c6211160e60963bac462c839faae280a92bb95e015e8fda72ac2aa9"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-0bc832d6fc88022d",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/exec.go",
+      "line": 21,
+      "rule": "Go - command execution syntax",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-29b9bdea573cfc5f9a32ea98/verify/revisions/000001/result.json",
+          "sha256": "2a7bde2d6001c159151a4250dedd397f04d8ba17dc267d17558dadae36217bb2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-d617ffcb3c34c94d5f7167c2/verify/revisions/000001/result.json",
+          "sha256": "8a530a134cac03ba5b2a8c607031e079855960d18094d38d2dd3ceeb17ab6da5"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-0cd42bd99f389ff8",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "Go - file creation atomicity",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v39.json",
+          "sha256": "b93761a92e029821e5ec25d451229985918037cab0c2be4b08cbe1b4ab61f002"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-f9b3e4d777513e87bea9e767/verify/revisions/000001/result.json",
+          "sha256": "f5322fbee8113c8871ca2189364560b33b425796e44ba75a8af6a0070f16b206"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-0dc5a4d58f50f7f8",
+      "profile": "multiagent",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 29,
+      "rule": "",
+      "failure_codes": [
+        "verification_missing_sink_evidence"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-0c4ceedbea55b2272683bdb1/verify/revisions/000001/result.json",
+          "sha256": "aac914f1568ead9ff7ef4e6d597e1516b506faffebcc6f1d0d5904bec9ee6cf3"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-0e7bf29d3f5921f3",
+      "profile": "rule",
+      "file": "pkg/handler/research/cleanPath.go",
+      "line": 15,
+      "rule": "Go - filesystem path containment",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-10ed6ca956691cfb",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/ssrf.go",
+      "line": 17,
+      "rule": "Go - stream read byte budget",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-43f8bec53983ef58cedaedc3/verify/revisions/000001/result.json",
+          "sha256": "12c9391f8b1ce67f7a363167f8a96aa29556c7bcac12af8bf4c2c41e8b88d8c6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-1de1c0c6ea0bfc03",
+      "profile": "rule",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 22,
+      "rule": "",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-245a88482147bc57eefa59e0/verify/revisions/000001/result.json",
+          "sha256": "598864abbac3cbf4904ffb166f38f235214ba61ae4eded8b7872ada4e4a04b00"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-f729a069487da876ffcb7ee9/verify/revisions/000001/result.json",
+          "sha256": "785c5fb22d8bb5aa9cdc3780cbd794daddbecce52a10328806db0f1783d4fa77"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-2760b01a63a8838c",
+      "profile": "rule",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 22,
+      "rule": "Go - file resource release",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4fe69035f6983cf0b7e7fee5/verify/revisions/000001/result.json",
+          "sha256": "8bf438493c3caedb02d785a9aa92f9d256da3416416d8436a3843c6f43453cb2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eaa30cc97d4658c1103be63a/verify/revisions/000001/result.json",
+          "sha256": "697c747d2c91b4c0fcd6336ecf4ae1a5b74979b3ce96834e8d1ab9df8e332364"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-2d156309e3404a72",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 54,
+      "rule": "Go - html/template.Template.Parse",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-3299ba8881087700",
+      "profile": "multiagent",
+      "file": "pkg/conf/conf.go",
+      "line": 18,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-0c4ceedbea55b2272683bdb1/verify/revisions/000001/result.json",
+          "sha256": "aac914f1568ead9ff7ef4e6d597e1516b506faffebcc6f1d0d5904bec9ee6cf3"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-385fa305a334f124",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 14,
+      "rule": "Go - path.Join",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_missing_source_evidence",
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v87.json",
+          "sha256": "4cb15b780eb429f665d9e6abc8f3801ca02961586cbb3bac5b92a6fe6b11b26f"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-1337019c60c738e059df6a5e/verify/revisions/000001/result.json",
+          "sha256": "b9da1d626dd51cdc7373066ec5fe171538d7f03ffb760f5587ab159866835360"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-d75023f6ed308a2abe721ca7/verify/revisions/000001/result.json",
+          "sha256": "4c6cfeb75e67def2e54c760a5e6b0a457b91d8c6e08b6517243c4f24a3bc3af2"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-39f773526648b89d",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 14,
+      "rule": "Go - filepath.Join",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_missing_source_evidence",
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v87.json",
+          "sha256": "4cb15b780eb429f665d9e6abc8f3801ca02961586cbb3bac5b92a6fe6b11b26f"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-1337019c60c738e059df6a5e/verify/revisions/000001/result.json",
+          "sha256": "b9da1d626dd51cdc7373066ec5fe171538d7f03ffb760f5587ab159866835360"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-d75023f6ed308a2abe721ca7/verify/revisions/000001/result.json",
+          "sha256": "4c6cfeb75e67def2e54c760a5e6b0a457b91d8c6e08b6517243c4f24a3bc3af2"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-3d4bb9eac427e32d",
+      "profile": "rule",
+      "file": "pkg/handler/research/unzipBody.go",
+      "line": 12,
+      "rule": "Go - archive expansion budget",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-43f8bec53983ef58cedaedc3/verify/revisions/000001/result.json",
+          "sha256": "12c9391f8b1ce67f7a363167f8a96aa29556c7bcac12af8bf4c2c41e8b88d8c6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eeecb62219a95e1c17b64def/verify/revisions/000001/result.json",
+          "sha256": "fa9f10aa2c6211160e60963bac462c839faae280a92bb95e015e8fda72ac2aa9"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-3f94ae1cba5076c3",
+      "profile": "rule",
+      "file": "pkg/handler/research/cleanPath.go",
+      "line": 18,
+      "rule": "Go - path.Join",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_missing_source_evidence",
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-40ab06cba743645e",
+      "profile": "rule",
+      "file": "pkg/core/server.go",
+      "line": 19,
+      "rule": "Go - debug configuration signal",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-419308760f6df01a",
+      "profile": "rule",
+      "file": "main.go",
+      "line": 15,
+      "rule": "Go - concurrent state audit",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-v42-full-20261103-batch03/verify/revisions/000001/result.json",
+          "sha256": "643bd358aec5ab1fae32ac3d0f771885f742f9e4710e7395dc67cd8fbdfa187a"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4fe69035f6983cf0b7e7fee5/verify/revisions/000001/result.json",
+          "sha256": "8bf438493c3caedb02d785a9aa92f9d256da3416416d8436a3843c6f43453cb2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-d75023f6ed308a2abe721ca7/verify/revisions/000001/result.json",
+          "sha256": "4c6cfeb75e67def2e54c760a5e6b0a457b91d8c6e08b6517243c4f24a3bc3af2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eeecb62219a95e1c17b64def/verify/revisions/000001/result.json",
+          "sha256": "fa9f10aa2c6211160e60963bac462c839faae280a92bb95e015e8fda72ac2aa9"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-424ecc23099eddf9",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/ssrf.go",
+      "line": 11,
+      "rule": "Go - HTTP response resource release",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-46a55b18ba3785da",
+      "profile": "rule",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 87,
+      "rule": "Go - HTTP effective request deadline",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-43f8bec53983ef58cedaedc3/verify/revisions/000001/result.json",
+          "sha256": "12c9391f8b1ce67f7a363167f8a96aa29556c7bcac12af8bf4c2c41e8b88d8c6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eaa30cc97d4658c1103be63a/verify/revisions/000001/result.json",
+          "sha256": "697c747d2c91b4c0fcd6336ecf4ae1a5b74979b3ce96834e8d1ab9df8e332364"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-48d4f4b6cc7f46dd",
+      "profile": "rule",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 22,
+      "rule": "",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-3a8eb97932d06cc6bf5bb6fb/verify/revisions/000001/result.json",
+          "sha256": "797980907e8de8b6e4907d5d66f277c7f0cb532293d05db9ebb932ea299e1877"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-58574fe4080506ec94f6cd9f/verify/revisions/000001/result.json",
+          "sha256": "85560ebba47499282cc48b3bf9001a76dff8a8ff11aa9c2c068c53beb26be670"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-9ed2ba6e9b3d25f137929887/verify/revisions/000001/result.json",
+          "sha256": "c6785a92e3e0f292da4acccfcda4b17534e007745405ee2b9fc01def7d4c3dff"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-ce6454e8d08354ac5b24f868/verify/revisions/000001/result.json",
+          "sha256": "f292737ec4ed4a7090c39431955a8c0a1f87a7516b3d927afe9d14865a487ae9"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-ed593a102edf20ac19643bc1/verify/revisions/000001/result.json",
+          "sha256": "67adc8ed95587649fe2272cda398528c794a5e29b1b8243cb8d0c12ae896b130"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-fe4689e735c1b1a25ce8f28d/verify/revisions/000001/result.json",
+          "sha256": "995d7ac20bbbb18a70a9e8a0cb973cba39935c88d4573d8df668279a5067555a"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-4b37d92806c0be6e",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 41,
+      "rule": "Go - filepath.Join",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-4c1e1939d0f847c1",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "Go - os.Create",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103.json",
+          "sha256": "fded9029108ff74e2194200e31933cb02847d7eb31dbf8d90e7cdca5b3cbf321"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-1492c4b7615c03365b63347f/verify/revisions/000001/result.json",
+          "sha256": "5b45e371b9b472d88811a3884a8a67aa7c7657c5e5d31cc5d2b1d929730cdb80"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4fe69035f6983cf0b7e7fee5/verify/revisions/000001/result.json",
+          "sha256": "8bf438493c3caedb02d785a9aa92f9d256da3416416d8436a3843c6f43453cb2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-d75023f6ed308a2abe721ca7/verify/revisions/000001/result.json",
+          "sha256": "4c6cfeb75e67def2e54c760a5e6b0a457b91d8c6e08b6517243c4f24a3bc3af2"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-52abbaf81c9c1b70",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 36,
+      "rule": "Go - literal credential assignment",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-43f8bec53983ef58cedaedc3/verify/revisions/000001/result.json",
+          "sha256": "12c9391f8b1ce67f7a363167f8a96aa29556c7bcac12af8bf4c2c41e8b88d8c6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-596e8312f8d3a798",
+      "profile": "rule",
+      "file": "pkg/conf/conf.go",
+      "line": 103,
+      "rule": "Go - concurrent state audit",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-65fd90abaa474ff9",
+      "profile": "rule",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 67,
+      "rule": "Go - connection effective deadline",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-66d5f147b9369ffa",
+      "profile": "rule",
+      "file": "pkg/handler/safe/exec.go",
+      "line": 28,
+      "rule": "Go - command execution syntax",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-d617ffcb3c34c94d5f7167c2/verify/revisions/000001/result.json",
+          "sha256": "8a530a134cac03ba5b2a8c607031e079855960d18094d38d2dd3ceeb17ab6da5"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-69eb7d8656fb028b",
+      "profile": "rule",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 82,
+      "rule": "Go - net/http.NewRequest",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-6b125e42ff2d73d8",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 27,
+      "rule": "Go - html/template.Template.Parse",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103.json",
+          "sha256": "fded9029108ff74e2194200e31933cb02847d7eb31dbf8d90e7cdca5b3cbf321"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-1492c4b7615c03365b63347f/verify/revisions/000001/result.json",
+          "sha256": "5b45e371b9b472d88811a3884a8a67aa7c7657c5e5d31cc5d2b1d929730cdb80"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-7314a2f2450a1b3e",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-053acb43bb87558ac333d1e2/verify/revisions/000001/result.json",
+          "sha256": "c7f5b4386715a38b1ad32bccd3c4580227b1674ba3d855bf23d651367eb1015e"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2bc0cd7bfed13e72d361da5b/verify/revisions/000001/result.json",
+          "sha256": "a820c66ba0a1a6bc136d96ddccdbb68df8eb4a92a1d8d25dce4ff5ca6d73a634"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-31964e61153551c33fe33f2e/verify/revisions/000001/result.json",
+          "sha256": "b12dad38acc60fcacfe50aa1c1d857923e1f68be48f4fe56ebb026c5c81aad02"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-3a8eb97932d06cc6bf5bb6fb/verify/revisions/000001/result.json",
+          "sha256": "797980907e8de8b6e4907d5d66f277c7f0cb532293d05db9ebb932ea299e1877"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-440ea841f2e976aeb5633434/verify/revisions/000001/result.json",
+          "sha256": "665abfdfbd10edd5748cfa4c745d39e622e3abec40bd60f992ff9e8683693eec"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-58574fe4080506ec94f6cd9f/verify/revisions/000001/result.json",
+          "sha256": "85560ebba47499282cc48b3bf9001a76dff8a8ff11aa9c2c068c53beb26be670"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-c36fa91a7637b8c8fe01aa1e/verify/revisions/000001/result.json",
+          "sha256": "ceba4f17ee02ea2f313b6f1bb8cd547bc0f2d9e5fba2b88d76365fb67c0890df"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-ce6454e8d08354ac5b24f868/verify/revisions/000001/result.json",
+          "sha256": "f292737ec4ed4a7090c39431955a8c0a1f87a7516b3d927afe9d14865a487ae9"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-de82eee42a79d99af13321b4/verify/revisions/000001/result.json",
+          "sha256": "9061ea56da38cc70c0303d86cc5b301cecbbbe625b9f2289fe46555b2bf4860a"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-e4f47eeef4c5707fe309b75c/verify/revisions/000001/result.json",
+          "sha256": "74313c0903c3e076583cc3f6e4d9340ff36c4e863f2a85e0ca2f64cf9f320e09"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-ed593a102edf20ac19643bc1/verify/revisions/000001/result.json",
+          "sha256": "67adc8ed95587649fe2272cda398528c794a5e29b1b8243cb8d0c12ae896b130"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-fe4689e735c1b1a25ce8f28d/verify/revisions/000001/result.json",
+          "sha256": "995d7ac20bbbb18a70a9e8a0cb973cba39935c88d4573d8df668279a5067555a"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-73f6d9ff4769a682",
+      "profile": "rule",
+      "file": "pkg/handler/research/cleanPath.go",
+      "line": 21,
+      "rule": "Go - ioutil.ReadFile",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v87.json",
+          "sha256": "4cb15b780eb429f665d9e6abc8f3801ca02961586cbb3bac5b92a6fe6b11b26f"
+        },
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v88.json",
+          "sha256": "82353e7f9ea87d851fcd00c3f9bb7711a053f1bc85be98009206c35cbff69c5d"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-1337019c60c738e059df6a5e/verify/revisions/000001/result.json",
+          "sha256": "b9da1d626dd51cdc7373066ec5fe171538d7f03ffb760f5587ab159866835360"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b7b661755b7263a140c98ef4/verify/revisions/000001/result.json",
+          "sha256": "cbf65ab95bbc49c9e15a220dc321bf7f4f9a4edb4a8501d321494ee3b55b23c0"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eeecb62219a95e1c17b64def/verify/revisions/000001/result.json",
+          "sha256": "fa9f10aa2c6211160e60963bac462c839faae280a92bb95e015e8fda72ac2aa9"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-7560dd0f163f36c2",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "Go - file resource release",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eaa30cc97d4658c1103be63a/verify/revisions/000001/result.json",
+          "sha256": "697c747d2c91b4c0fcd6336ecf4ae1a5b74979b3ce96834e8d1ab9df8e332364"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-76b315a549ef458b",
+      "profile": "multiagent",
+      "file": "main.go",
+      "line": 30,
+      "rule": "",
+      "failure_codes": [
+        "verification_missing_sink_evidence"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-0c4ceedbea55b2272683bdb1/verify/revisions/000001/result.json",
+          "sha256": "aac914f1568ead9ff7ef4e6d597e1516b506faffebcc6f1d0d5904bec9ee6cf3"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-8473f29d592e5d51",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/exec.go",
+      "line": 21,
+      "rule": "Go - os/exec.Cmd.Output",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-8505150b9f509d70",
+      "profile": "multiagent",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 54,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-0c4ceedbea55b2272683bdb1/verify/revisions/000001/result.json",
+          "sha256": "aac914f1568ead9ff7ef4e6d597e1516b506faffebcc6f1d0d5904bec9ee6cf3"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-85352ac985b6f60e",
+      "profile": "multiagent",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 68,
+      "rule": "",
+      "failure_codes": [
+        "verification_missing_sink_evidence"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-0c4ceedbea55b2272683bdb1/verify/revisions/000001/result.json",
+          "sha256": "aac914f1568ead9ff7ef4e6d597e1516b506faffebcc6f1d0d5904bec9ee6cf3"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-86a275b1e7bd09f1",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 27,
+      "rule": "Go - html/template.New",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-873df385eaaa5b24",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 41,
+      "rule": "Go - path.Join",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-8e5cdbf3acff87e5",
+      "profile": "rule",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 33,
+      "rule": "Go - HTTP response resource release",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v88.json",
+          "sha256": "82353e7f9ea87d851fcd00c3f9bb7711a053f1bc85be98009206c35cbff69c5d"
+        },
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v91-fresh.json",
+          "sha256": "bae0fa94357a6c8336667b93104b5c77d82247258278a326fa0510a7af92dbef"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-43f8bec53983ef58cedaedc3/verify/revisions/000001/result.json",
+          "sha256": "12c9391f8b1ce67f7a363167f8a96aa29556c7bcac12af8bf4c2c41e8b88d8c6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4fe69035f6983cf0b7e7fee5/verify/revisions/000001/result.json",
+          "sha256": "8bf438493c3caedb02d785a9aa92f9d256da3416416d8436a3843c6f43453cb2"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-94ccbe6b0351195520c483d9/verify/revisions/000001/result.json",
+          "sha256": "e4f22f55c93f10966f4547d881ae8450ab44a28f21795fbd92ed71030ea6f365"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b7b661755b7263a140c98ef4/verify/revisions/000001/result.json",
+          "sha256": "cbf65ab95bbc49c9e15a220dc321bf7f4f9a4edb4a8501d321494ee3b55b23c0"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-965241ce6df76b0a",
+      "profile": "rule",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 67,
+      "rule": "",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-245a88482147bc57eefa59e0/verify/revisions/000001/result.json",
+          "sha256": "598864abbac3cbf4904ffb166f38f235214ba61ae4eded8b7872ada4e4a04b00"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-83a98b5173b81a004f3abd5e/verify/revisions/000001/result.json",
+          "sha256": "731fe001caa6b50e585c7f5a09e328e1706353f48b1a7af6c3e4386e4f84a3ab"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-9ea5e6dbe51a1161",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 68,
+      "rule": "Go - stream copy byte budget",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-a0ac32c9c96a09da",
+      "profile": "multiagent",
+      "file": "pkg/core/server.go",
+      "line": 18,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-0c4ceedbea55b2272683bdb1/verify/revisions/000001/result.json",
+          "sha256": "aac914f1568ead9ff7ef4e6d597e1516b506faffebcc6f1d0d5904bec9ee6cf3"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-a9602e95e53c6ae7",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 43,
+      "rule": "Go - archive expansion budget",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-43f8bec53983ef58cedaedc3/verify/revisions/000001/result.json",
+          "sha256": "12c9391f8b1ce67f7a363167f8a96aa29556c7bcac12af8bf4c2c41e8b88d8c6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-aa3821f9f9a74578",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 16,
+      "rule": "Go - os.Open",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-b246cbe2309ce3de",
+      "profile": "rule",
+      "file": "pkg/conf/conf.go",
+      "line": 18,
+      "rule": "Go - literal credential assignment",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eeecb62219a95e1c17b64def/verify/revisions/000001/result.json",
+          "sha256": "fa9f10aa2c6211160e60963bac462c839faae280a92bb95e015e8fda72ac2aa9"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-b5255a440e62b001",
+      "profile": "rule",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 33,
+      "rule": "Go - net/http.Get",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v87.json",
+          "sha256": "4cb15b780eb429f665d9e6abc8f3801ca02961586cbb3bac5b92a6fe6b11b26f"
+        },
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v89.json",
+          "sha256": "1c6d391bfd15ae0f132b8846a14d09a47cc6ba65cee7458ac92652cafb23673b"
+        },
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v90.json",
+          "sha256": "c11762a89b570a2071c885e3edcfc06a21cfdd5748a4a346673672bfd9ae43fd"
+        },
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v91.json",
+          "sha256": "d18c3a73069d649460ff5314a76fbef1861e2c72898053b6e25041e1908ca847"
+        },
+        {
+          "path": "gobuild/mgsast-rule-v41-live-20261103-batch02/verify/revisions/000001/result.json",
+          "sha256": "504ca655e2cce0fb7921e85f9d82b5c431ca27cfe5e8dff98134cd8aff778695"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-1337019c60c738e059df6a5e/verify/revisions/000001/result.json",
+          "sha256": "b9da1d626dd51cdc7373066ec5fe171538d7f03ffb760f5587ab159866835360"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-60d7d1828188fc540ff4afc3/verify/revisions/000001/result.json",
+          "sha256": "e264007d0970fff6ce1e5a5dda6ff6627490719a44855f2280785e69fd79c579"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-60d7d1828188fc540ff4afc3/verify/revisions/000002/result.json",
+          "sha256": "f40fdafd07a4ec03b7fb27acea46e6eb241380aaf6e30157b4117b2b7908d2b6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-60d7d1828188fc540ff4afc3/verify/revisions/000003/result.json",
+          "sha256": "672d2e5071eeda4b1c3e72452460961f49e86ab36265abacf1a08ee0714d9451"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-bf7fe08c4336e967",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/exec.go",
+      "line": 21,
+      "rule": "Go - os/exec.Command",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-bff97dd8a2ee4f3a",
+      "profile": "rule",
+      "file": "pkg/handler/safe/file.go",
+      "line": 15,
+      "rule": "Go - file resource release",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-c4cea790ddfd911b",
+      "profile": "rule",
+      "file": "pkg/handler/safe/file.go",
+      "line": 13,
+      "rule": "Go - path.Join",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-c5aacc8eac0a1e6b",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "Go - filesystem path containment",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_missing_source_evidence",
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-43f8bec53983ef58cedaedc3/verify/revisions/000001/result.json",
+          "sha256": "12c9391f8b1ce67f7a363167f8a96aa29556c7bcac12af8bf4c2c41e8b88d8c6"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eaa30cc97d4658c1103be63a/verify/revisions/000001/result.json",
+          "sha256": "697c747d2c91b4c0fcd6336ecf4ae1a5b74979b3ce96834e8d1ab9df8e332364"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-c7f47703148a5a02",
+      "profile": "rule",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 29,
+      "rule": "Go - stream copy byte budget",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_protocol_failed",
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v92.json",
+          "sha256": "fe506940333b2d30c28b7c65e0f02ea285873cb07029b2851facdcfdfe234329"
+        },
+        {
+          "path": "gobuild/mgsast-rule-mgtv-full-20261103-v93.json",
+          "sha256": "87f406ba41b4ee6c58d8592b21e24c74eba1cd31b1854581f86c7faa85afb7e5"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-3cf81b7a9dde6c18b3936588/verify/revisions/000001/result.json",
+          "sha256": "7537c1c43ee99e0e3b5e5cf72bf2e39a5f9f709827320aaa376d04d58fd7269d"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-c99ca893811f484c",
+      "profile": "rule",
+      "file": "pkg/handler/research/cleanPath.go",
+      "line": 18,
+      "rule": "Go - filepath.Join",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_missing_source_evidence",
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-21a0a87184bce946662d0bee/verify/revisions/000001/result.json",
+          "sha256": "685644987fdde710bdd808ec4026ac5135d2ea6786a8225a4e58bb02a3ae7854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-8ff70283aa1b4172b228279a/verify/revisions/000001/result.json",
+          "sha256": "e602382c0b09e2cca769f4a77bc71a59529176d03257b0ec5e433bbc73347f92"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-cd293d3a4c770ed3",
+      "profile": "rule",
+      "file": "pkg/handler/safe/proxy.go",
+      "line": 67,
+      "rule": "",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-0691da1fc84c54a7b1f794c0/verify/revisions/000001/result.json",
+          "sha256": "93c93896c67d737ba34ec78f47d9997808b1e63dd3a7bccdee433d657cc2ab03"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-088f2dffa0b94f95e62c834f/verify/revisions/000001/result.json",
+          "sha256": "69ca9bdab95bed92a0ce80184a7771deb67545b41e106dddd6ecdf86bef08854"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-33ada4928d41fa09d47642f2/verify/revisions/000001/result.json",
+          "sha256": "e2434028f9487820fa0140a60eedcdb480b45007f9fef41f269f6223cf6e8b1b"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-3a8eb97932d06cc6bf5bb6fb/verify/revisions/000001/result.json",
+          "sha256": "797980907e8de8b6e4907d5d66f277c7f0cb532293d05db9ebb932ea299e1877"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-63245e247d3bfb2b4377363b/verify/revisions/000001/result.json",
+          "sha256": "f64dd1b9d1fd338576a786e381114c9fb6b8efd302d4d15bf2489ee8b0f3e109"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-941a67e15027fa5ec01535d7/verify/revisions/000001/result.json",
+          "sha256": "5398438ad317c256cd3c2c6738192496ca86ede28d1ba018b0be7bb441122a27"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-9ed2ba6e9b3d25f137929887/verify/revisions/000001/result.json",
+          "sha256": "c6785a92e3e0f292da4acccfcda4b17534e007745405ee2b9fc01def7d4c3dff"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-de82eee42a79d99af13321b4/verify/revisions/000001/result.json",
+          "sha256": "9061ea56da38cc70c0303d86cc5b301cecbbbe625b9f2289fe46555b2bf4860a"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-ed593a102edf20ac19643bc1/verify/revisions/000001/result.json",
+          "sha256": "67adc8ed95587649fe2272cda398528c794a5e29b1b8243cb8d0c12ae896b130"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-ef5bc787a22763ec775b51d2/verify/revisions/000001/result.json",
+          "sha256": "3be9969e135cb8e2a40e9a37c213c3d125b1c8bde24f820d7614b2badccd6a59"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-ef8759ed5f7f4ff9ef2eb36b/verify/revisions/000001/result.json",
+          "sha256": "e60c3cad92d810b153800c3970178eee3bda8b787e8c0036bcc782ddbd95b162"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-cd6a5c4de27cbd2f",
+      "profile": "rule",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 18,
+      "rule": "Go - HTTP response resource release",
+      "failure_codes": [
+        "rule_validation_failure",
+        "verification_missing_source_evidence",
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-d75023f6ed308a2abe721ca7/verify/revisions/000001/result.json",
+          "sha256": "4c6cfeb75e67def2e54c760a5e6b0a457b91d8c6e08b6517243c4f24a3bc3af2"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-d059f7ab8a57397c",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 54,
+      "rule": "Go - html/template.New",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-d13bd820612ee9af",
+      "profile": "rule",
+      "file": "pkg/handler/research/unzipBody.go",
+      "line": 19,
+      "rule": "Go - stream read byte budget",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-d2839d32b65d5cda",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 30,
+      "rule": "Go - archive expansion budget",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eeecb62219a95e1c17b64def/verify/revisions/000001/result.json",
+          "sha256": "fa9f10aa2c6211160e60963bac462c839faae280a92bb95e015e8fda72ac2aa9"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-dbd6924e88f4f25f",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 45,
+      "rule": "Go - archive entry count budget",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4d9b2f8e66f61223ac2e97ca/verify/revisions/000001/result.json",
+          "sha256": "5dc99abf62ce036d51bf32fd29f2c4a448832e5991743d82fb4969cc2d4853d7"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-dd48bdfedc41a3e6",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/read_file.go",
+      "line": 16,
+      "rule": "Go - file resource release",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-eeecb62219a95e1c17b64def/verify/revisions/000001/result.json",
+          "sha256": "fa9f10aa2c6211160e60963bac462c839faae280a92bb95e015e8fda72ac2aa9"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-dd53c26b9c49a914",
+      "profile": "rule",
+      "file": "pkg/handler/unsafe/sqli.go",
+      "line": 22,
+      "rule": "Go - database/sql.DB.QueryContext",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-a609049634bdd54306a15340/verify/revisions/000001/result.json",
+          "sha256": "c5f8eadbaaa35ea07ed841861f70b9bdda5e81bb14fe4ed0c1157ba97eaf8ce1"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-e3af12756e218290",
+      "profile": "rule",
+      "file": "pkg/handler/research/read_body.go",
+      "line": 22,
+      "rule": "Go - file creation atomicity",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        }
+      ]
+    },
+    {
+      "historical_id": "AF-f71bda5420a5ac74",
+      "profile": "rule",
+      "file": "pkg/handler/safe/file.go",
+      "line": 13,
+      "rule": "Go - filepath.Join",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-2d9fd435e3b796a481694945/verify/revisions/000001/result.json",
+          "sha256": "ca20835cf7186bef526fb62ef39ae64be4c7cc5e7c9e484e7c181b3c65d91b05"
+        },
+        {
+          "path": "mgsast/.mgsast/sessions/sess-b6771253f91385d9263991a5/verify/revisions/000001/result.json",
+          "sha256": "b6fb3b3b0efba8834cfdf9fc57e5265363837bf277f918abc972fe0f8ace403c"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-0501f0dcf15656aac584b00e",
+      "profile": "prompt",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 58,
+      "rule": "",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-0f6cdec3f3de28ea1f68d76b",
+      "profile": "prompt",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 30,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-1f95468db907ca51050a9be2",
+      "profile": "prompt",
+      "file": "pkg/handler/research/goroutine.go",
+      "line": 34,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-29f3ee635830f7d852d91a78",
+      "profile": "prompt",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 64,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-4917838af912075f193d851d",
+      "profile": "prompt",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 43,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-6ddd4b64af375c0231fd585d",
+      "profile": "prompt",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 43,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-8f1662d539d33dddf55d8c83",
+      "profile": "prompt",
+      "file": "pkg/handler/unsafe/ssti.go",
+      "line": 40,
+      "rule": "",
+      "failure_codes": [
+        "verification_protocol_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-c093dd04cb80f832f47658f1",
+      "profile": "prompt",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 45,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-c46b7072a1e5a073f08c2965",
+      "profile": "prompt",
+      "file": "pkg/conf/conf.go",
+      "line": 18,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-cdb0b6299fac540fa448da4f",
+      "profile": "prompt",
+      "file": "pkg/handler/research/unzipBody.go",
+      "line": 12,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-eeea81eebe774d4f2ba1823d",
+      "profile": "prompt",
+      "file": "pkg/handler/research/unzipBody.go",
+      "line": 12,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    },
+    {
+      "historical_id": "review-f3e6cc6191814a2156b1ab75",
+      "profile": "prompt",
+      "file": "pkg/handler/unsafe/untar.go",
+      "line": 30,
+      "rule": "",
+      "failure_codes": [
+        "verification_semantic_validation_failed"
+      ],
+      "artifacts": [
+        {
+          "path": "mgsast/.mgsast/sessions/sess-4da51b7b9079a87ab9422d77/verify/revisions/000001/result.json",
+          "sha256": "2844be627b6253d998b4174c51abbca010a0659d1939448d7c09e2c39b80828a"
+        }
+      ]
+    }
+  ],
+  "legacy_mappings": [
+  {
+    "historical_id": "AF-7314a2f2450a1b3e",
+    "candidate_id": "AF-0cd42bd99f389ff8",
+    "basis": "Same untar.go:64 file-creation atomicity operation; historical rule identity changed."
+  },
+  {
+    "historical_id": "AF-cd293d3a4c770ed3",
+    "candidate_id": "AF-65fd90abaa474ff9",
+    "basis": "Same safe/proxy.go:67 connection deadline operation; historical rule identity changed."
+  },
+  {
+    "historical_id": "AF-965241ce6df76b0a",
+    "candidate_id": "AF-65fd90abaa474ff9",
+    "basis": "Same safe/proxy.go:67 connection deadline operation; historical rule identity changed."
+  },
+  {
+    "historical_id": "AF-1de1c0c6ea0bfc03",
+    "candidate_id": "AF-e3af12756e218290",
+    "basis": "Same read_body.go:22 file-creation atomicity operation; historical rule identity changed."
+  },
+  {
+    "historical_id": "AF-48d4f4b6cc7f46dd",
+    "candidate_id": "AF-e3af12756e218290",
+    "basis": "Same read_body.go:22 file-creation atomicity operation; historical rule identity changed."
+  }
+],
+  "legacy_rule_ids": [
+    "AF-7314a2f2450a1b3e",
+    "AF-cd293d3a4c770ed3",
+    "AF-965241ce6df76b0a",
+    "AF-1de1c0c6ea0bfc03",
+    "AF-48d4f4b6cc7f46dd"
+  ]
+}
+
