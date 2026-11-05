@@ -1,0 +1,12 @@
+class ConditionalFlow {
+    static class ConditionalBox { String value = ""; String other = ""; }
+    static String conditional_read(ConditionalBox box) { return box.value; }
+    static String reference_keep(String reference_keepInput, boolean flag) { ConditionalBox first = new ConditionalBox(); ConditionalBox second = new ConditionalBox(); first.value = reference_keepInput; if (flag) { first = second; } String reference_keepOut = first.value; return reference_keepOut; }
+    static String reference_new(String reference_newInput, boolean flag) { ConditionalBox first = new ConditionalBox(); ConditionalBox second = new ConditionalBox(); second.value = reference_newInput; if (flag) { first = second; } String reference_newOut = first.value; return reference_newOut; }
+    static String reference_distinct(String reference_distinctInput, boolean flag) { ConditionalBox first = new ConditionalBox(); ConditionalBox second = new ConditionalBox(); first.value = reference_distinctInput; if (flag) { first = second; } String reference_distinctOut = first.other; return reference_distinctOut; }
+    static String reference_call(String reference_callInput, boolean flag) { ConditionalBox first = new ConditionalBox(); ConditionalBox second = new ConditionalBox(); first.value = reference_callInput; if (flag) { first = second; } String reference_callOut = conditional_read(first); return reference_callOut; }
+    static String reference_call_before(String reference_call_beforeInput, boolean flag) { ConditionalBox first = new ConditionalBox(); ConditionalBox second = new ConditionalBox(); second.value = reference_call_beforeInput; String reference_call_beforeOut = conditional_read(first); if (flag) { first = second; } return reference_call_beforeOut; }
+    static String conditional_read_wrap(ConditionalBox box) { return conditional_read(box); }
+    static String reference_nested_call(String reference_nested_callInput, boolean flag) { ConditionalBox first = new ConditionalBox(); ConditionalBox second = new ConditionalBox(); first.value = reference_nested_callInput; if (flag) { first = second; } String reference_nested_callOut = conditional_read_wrap(first); return reference_nested_callOut; }
+    static String reference_nested_before(String reference_nested_beforeInput, boolean flag) { ConditionalBox first = new ConditionalBox(); ConditionalBox second = new ConditionalBox(); second.value = reference_nested_beforeInput; String reference_nested_beforeOut = conditional_read_wrap(first); if (flag) { first = second; } return reference_nested_beforeOut; }
+}

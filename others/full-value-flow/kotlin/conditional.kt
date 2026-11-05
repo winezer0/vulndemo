@@ -1,0 +1,11 @@
+class ConditionalBox { var value: String = ""; var other: String = ""; }
+fun conditional_read(box: ConditionalBox): String { return box.value }
+fun reference_keep(reference_keepInput: String, flag: Boolean): String { var first = ConditionalBox(); val second = ConditionalBox(); first.value = reference_keepInput; if (flag) { first = second }; val reference_keepOut = first.value; return reference_keepOut }
+fun reference_new(reference_newInput: String, flag: Boolean): String { var first = ConditionalBox(); val second = ConditionalBox(); second.value = reference_newInput; if (flag) { first = second }; val reference_newOut = first.value; return reference_newOut }
+fun reference_distinct(reference_distinctInput: String, flag: Boolean): String { var first = ConditionalBox(); val second = ConditionalBox(); first.value = reference_distinctInput; if (flag) { first = second }; val reference_distinctOut = first.other; return reference_distinctOut }
+fun reference_call(reference_callInput: String, flag: Boolean): String { var first = ConditionalBox(); val second = ConditionalBox(); first.value = reference_callInput; if (flag) { first = second }; val reference_callOut = conditional_read(first); return reference_callOut }
+fun reference_call_before(reference_call_beforeInput: String, flag: Boolean): String { var first = ConditionalBox(); val second = ConditionalBox(); second.value = reference_call_beforeInput; val reference_call_beforeOut = conditional_read(first); if (flag) { first = second }; return reference_call_beforeOut }
+
+fun conditional_read_wrap(box: ConditionalBox): String { return conditional_read(box) }
+fun reference_nested_call(reference_nested_callInput: String, flag: Boolean): String { var first = ConditionalBox(); val second = ConditionalBox(); first.value = reference_nested_callInput; if (flag) { first = second }; val reference_nested_callOut = conditional_read_wrap(first); return reference_nested_callOut }
+fun reference_nested_before(reference_nested_beforeInput: String, flag: Boolean): String { var first = ConditionalBox(); val second = ConditionalBox(); second.value = reference_nested_beforeInput; val reference_nested_beforeOut = conditional_read_wrap(first); if (flag) { first = second }; return reference_nested_beforeOut }

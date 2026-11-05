@@ -1,0 +1,5 @@
+module example.com/fullvalueflow/httpstate
+
+go 1.23.0
+
+require github.com/go-resty/resty/v2 v2.16.5
