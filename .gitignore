@@ -3,3 +3,6 @@ codeindex.sqlite
 *.sqlite-shm
 *.sqlite
 *.db
+target/
+__pycache__/
+*.py[cod]

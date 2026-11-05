@@ -1,0 +1,238 @@
+[
+  {
+    "name": "direct",
+    "source": "directInput",
+    "target": "directOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 10
+  },
+  {
+    "name": "field_same",
+    "source": "field_sameInput",
+    "target": "field_sameOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 18
+  },
+  {
+    "name": "field_distinct",
+    "source": "field_distinctInput",
+    "target": "field_distinctOut",
+    "expected": "none",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 26
+  },
+  {
+    "name": "map_same",
+    "source": "map_sameInput",
+    "target": "map_sameOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 34
+  },
+  {
+    "name": "map_distinct_key",
+    "source": "map_distinct_keyInput",
+    "target": "map_distinct_keyOut",
+    "expected": "none",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 42
+  },
+  {
+    "name": "map_distinct_object",
+    "source": "map_distinct_objectInput",
+    "target": "map_distinct_objectOut",
+    "expected": "none",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 50
+  },
+  {
+    "name": "map_dynamic",
+    "source": "map_dynamicInput",
+    "target": "map_dynamicOut",
+    "expected": "candidate",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 58
+  },
+  {
+    "name": "map_empty_key",
+    "source": "map_empty_keyInput",
+    "target": "map_empty_keyOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 66
+  },
+  {
+    "name": "slice_same",
+    "source": "slice_sameInput",
+    "target": "slice_sameOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 74
+  },
+  {
+    "name": "array_distinct",
+    "source": "array_distinctInput",
+    "target": "array_distinctOut",
+    "expected": "none",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 82
+  },
+  {
+    "name": "alias",
+    "source": "aliasInput",
+    "target": "aliasOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 91
+  },
+  {
+    "name": "cross_return",
+    "source": "cross_returnInput",
+    "target": "cross_returnOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 97
+  },
+  {
+    "name": "range_value",
+    "source": "range_valueInput",
+    "target": "range_valueOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 108
+  },
+  {
+    "name": "overwrite",
+    "source": "overwriteInput",
+    "target": "overwriteOut",
+    "expected": "none",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 116
+  },
+  {
+    "name": "callback",
+    "source": "callbackInput",
+    "target": "callbackOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 123
+  },
+  {
+    "name": "async_channel",
+    "source": "async_channelInput",
+    "target": "async_channelOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 131
+  },
+  {
+    "name": "array_same",
+    "source": "array_sameInput",
+    "target": "array_sameOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 148
+  },
+  {
+    "name": "slice_alias",
+    "source": "slice_aliasInput",
+    "target": "slice_aliasOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 157
+  },
+  {
+    "name": "branch",
+    "source": "branchInput",
+    "target": "branchOut",
+    "expected": "candidate",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 167
+  },
+  {
+    "name": "cross_field",
+    "source": "cross_fieldInput",
+    "target": "cross_fieldOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 175
+  },
+  {
+    "name": "call_isolation",
+    "source": "call_isolationInput",
+    "target": "call_isolationOut",
+    "expected": "none",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 182
+  },
+  {
+    "name": "slot_positive",
+    "source": "slot_positiveInput",
+    "target": "slot_positiveOut",
+    "expected": "verified",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 188
+  },
+  {
+    "name": "slot_negative",
+    "source": "slot_negativeInput",
+    "target": "slot_negativeOut",
+    "expected": "none",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 194
+  },
+  {
+    "name": "opaque",
+    "source": "opaqueInput",
+    "target": "opaqueOut",
+    "expected": "incomplete",
+    "source_slot": 1,
+    "target_slot": 0,
+    "target_line": 202
+  },
+  {"name":"callback_unused","source":"callback_unusedInput","target":"callback_unusedOut","expected":"none","source_slot":1,"target_slot":0,"target_line":4},
+  {"name":"callback_isolation","source":"callback_isolationInput","target":"callback_isolationOut","expected":"none","source_slot":1,"target_slot":0,"target_line":7},
+  {"name":"channel_distinct","source":"channel_distinctInput","target":"channel_distinctOut","expected":"none","source_slot":1,"target_slot":0,"target_line":10},
+  {"name":"channel_alias","source":"channel_aliasInput","target":"channel_aliasOut","expected":"candidate","source_slot":1,"target_slot":0,"target_line":13},
+  {"name":"cross_field_overwrite","source":"cross_field_overwriteInput","target":"cross_field_overwriteOut","expected":"none","source_slot":1,"target_slot":0,"target_line":16},
+  {"name":"cross_field_distinct","source":"cross_field_distinctInput","target":"cross_field_distinctOut","expected":"none","source_slot":1,"target_slot":0,"target_line":19},
+  {"name":"cross_field_after","source":"cross_field_afterInput","target":"cross_field_afterOut","expected":"none","source_slot":1,"target_slot":0,"target_line":22},
+  {"name":"composite_map","source":"composite_mapInput","target":"composite_mapOut","expected":"verified","source_slot":1,"target_slot":0,"target_line":25},
+  {"name":"channel_named","source":"channel_namedInput","target":"channel_namedOut","expected":"candidate","source_slot":1,"target_slot":0,"target_line":28},
+  {"name":"channel_parameters","source":"channel_parametersInput","target":"channel_parametersOut","expected":"candidate","source_slot":1,"target_slot":0,"target_line":31},
+  {"name":"channel_parameter_distinct","source":"channel_parameter_distinctInput","target":"channel_parameter_distinctOut","expected":"none","source_slot":1,"target_slot":0,"target_line":34},
+  {"name":"nested_field","source":"nested_fieldInput","target":"nested_fieldOut","expected":"verified","source_slot":1,"target_slot":0,"target_line":6},
+  {"name":"nested_key","source":"nested_keyInput","target":"nested_keyOut","expected":"verified","source_slot":1,"target_slot":0,"target_line":9},
+  {"name":"nested_key_distinct","source":"nested_key_distinctInput","target":"nested_key_distinctOut","expected":"none","source_slot":1,"target_slot":0,"target_line":12},
+  {"name":"loop_field","source":"loop_fieldInput","target":"loop_fieldOut","expected":"candidate","source_slot":1,"target_slot":0,"target_line":4},
+  {"name":"loop_key","source":"loop_keyInput","target":"loop_keyOut","expected":"candidate","source_slot":1,"target_slot":0,"target_line":7},
+  {"name":"loop_distinct","source":"loop_distinctInput","target":"loop_distinctOut","expected":"none","source_slot":1,"target_slot":0,"target_line":10},
+  {"name":"loop_after","source":"loop_afterInput","target":"loop_afterOut","expected":"none","source_slot":1,"target_slot":0,"target_line":13},
+  {"name":"loop_nested","source":"loop_nestedInput","target":"loop_nestedOut","expected":"candidate","source_slot":1,"target_slot":0,"target_line":16},
+  {"name":"loop_chain","source":"loop_chainInput","target":"loop_chainOut","expected":"candidate","source_slot":1,"target_slot":0,"target_line":19}
+]
