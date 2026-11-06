@@ -6,3 +6,4 @@ codeindex.sqlite
 target/
 __pycache__/
 *.py[cod]
+.codegraph
