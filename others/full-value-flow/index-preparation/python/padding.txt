@@ -1,0 +1,9 @@
+
+def helper_one(value):
+    return value + "-one"
+
+def helper_two(value):
+    return helper_one(value) + "-two"
+
+def helper_three(value):
+    return helper_two(value) + "-three"

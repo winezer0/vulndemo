@@ -1,0 +1,6 @@
+
+func HelperOne(value string) string { return value + "-one" }
+func HelperTwo(value string) string { return HelperOne(value) + "-two" }
+func HelperThree(value string) string { return HelperTwo(value) + "-three" }
+func HelperFour(value string) string { return HelperThree(value) + "-four" }
+func HelperFive(value string) string { return HelperFour(value) + "-five" }

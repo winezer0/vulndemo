@@ -1,0 +1,6 @@
+
+export function HelperOne(value: string): string { return value + "-one"; }
+export function HelperTwo(value: string): string { return HelperOne(value) + "-two"; }
+export function HelperThree(value: string): string { return HelperTwo(value) + "-three"; }
+export function HelperFour(value: string): string { return HelperThree(value) + "-four"; }
+export function HelperFive(value: string): string { return HelperFour(value) + "-five"; }
