@@ -1,0 +1,32 @@
+{
+  "schema": "mgsast.semantic-review-cases/v1",
+  "source_fixture": "others/go-sec-code",
+  "baseline_session": "sess-7cf6af384ce71ccda179c30b",
+  "baseline_final_candidates": 53,
+  "baseline_review_candidates": 21,
+  "cases": [
+    {"candidate_id":"AF-69cef3cb1e519181","file":"pkg/conf/conf.go","line":18,"focus":"host_context","assertion":"Checked literal evidence satisfies the secret contract without a fabricated graph; deployment assumptions remain in POC readiness."},
+    {"candidate_id":"AF-98df9accc583315a","file":"pkg/router.go","line":47,"focus":"repository_lookup","related_group":"static-root","assertion":"Inspect the static registration and Auth implementation; query truncation alone does not establish unknown reachability."},
+    {"candidate_id":"AF-81dc345d9c44a43c","file":"pkg/handler/safe/exec.go","line":28,"focus":"mechanism_scope","assertion":"A shell injection claim and a single-argument option injection claim are distinct; blocked shell evaluation needs scoped counter-evidence."},
+    {"candidate_id":"AF-3e1dd02e272241e9","file":"pkg/handler/safe/upload_file.go","line":35,"focus":"dependency_boundary","assertion":"Assess the actual uploaded filename and save/delete operation; do not assert a matched dependency implementation unavailable in the repository."},
+    {"candidate_id":"AF-48582f7ca088a34e","file":"pkg/conf/conf.go","line":63,"focus":"external_precondition","related_group":"config-query","assertion":"Environment configuration control differs from remote request control; unresolved configuration trust boundaries remain explicit."},
+    {"candidate_id":"AF-6ef10f3c661b28fc","file":"pkg/handler/research/goroutine.go","line":42,"focus":"mechanism_scope","assertion":"A request trigger does not establish influence over a literal destination; an adjacent race does not decide the SSRF claim."},
+    {"candidate_id":"AF-36cd89a90ad88d95","file":"pkg/handler/research/read_body.go","line":22,"focus":"actor_capability","assertion":"ReadBody writes remote request bodies; ordinary application writes do not establish symlink prepositioning or replacement capability."},
+    {"candidate_id":"AF-805e0b1ebe90b03c","file":"pkg/handler/research/read_body.go","line":41,"focus":"actor_capability","assertion":"The writer mutex does not cover PrintFlag; a returned constant marker does not prove file-content disclosure."},
+    {"candidate_id":"AF-8935817bf3deac10","file":"pkg/filter/auth.go","line":5,"focus":"repository_lookup","assertion":"Auth is registered in InitRouter and only sets a header; identifying an authentication vulnerability still requires a protected operation and impact."},
+    {"candidate_id":"AF-6291675478ad1cd0","file":"pkg/handler/research/cleanPath.go","line":17,"focus":"host_counter","function_start":11,"function_end":27,"assertion":"A checked whole function body is not merely a reused route declaration; body evidence remains frozen and source validated."},
+    {"candidate_id":"AF-82e644925e34f948","file":"pkg/handler/safe/file.go","line":15,"focus":"mechanism_scope","assertion":"Ordinary traversal and preexisting symlink traversal require separate mechanisms and preconditions."},
+    {"candidate_id":"AF-654805c2ce1589c4","file":"main.go","line":15,"focus":"evidence_conflict","related_group":"server-lifecycle","assertion":"Receiving an external signal is not synchronization with server initialization in a separate goroutine."},
+    {"candidate_id":"AF-6933c580a012617a","file":"pkg/conf/conf.go","line":63,"focus":"external_precondition","related_group":"config-query","assertion":"Compare the same configuration trust boundary with the related candidate without borrowing evidence refs."},
+    {"candidate_id":"AF-f7b3ccfecb3eb0ea","file":"pkg/core/server.go","line":19,"focus":"obligation_provenance","assertion":"Debug mode is a review signal, not proof of a concrete disclosure or deployed security impact."},
+    {"candidate_id":"AF-f6138d0cf90a2bb7","file":"pkg/handler/safe/proxy.go","line":99,"focus":"external_precondition","assertion":"Separate source-visible growth and limits from unobserved deployment bounds; an executed exhaustion POC is not a static verdict prerequisite."},
+    {"candidate_id":"AF-31e5e3aa1786ed4f","file":"pkg/router.go","line":47,"focus":"repository_lookup","related_group":"static-root","assertion":"Compare exact static exposure mechanisms and inspect Auth before attributing control to it."},
+    {"candidate_id":"AF-8d277a68d54bf13e","file":"main.go","line":30,"focus":"evidence_conflict","related_group":"server-lifecycle","assertion":"Use the same server lifecycle facts as the startup candidate; a static race and its demonstrated security impact are separate judgments."},
+    {"candidate_id":"AF-3acc55e3fafbe19c","file":"pkg/handler/research/read_body.go","line":22,"focus":"actor_capability","assertion":"Do not merge same-site state claims unless their actor, mechanism and remedy agree; preserve local directory replacement unknowns."},
+    {"candidate_id":"AF-a27c59b2bdbbc1f6","file":"pkg/handler/safe/exec.go","line":28,"focus":"host_classification","related_group":"argument-option","assertion":"Reuse checked process operation semantics for taxonomy compatibility without treating them as proof of an exploitable option or impact."},
+    {"candidate_id":"AF-3e3ef83ee7bec873","file":"pkg/handler/safe/exec.go","line":28,"focus":"dependency_boundary","related_group":"argument-option","assertion":"Option support and single-token impact may depend on an unavailable external executable; preserve that boundary."},
+    {"candidate_id":"AF-291f714208e29b83","file":"pkg/handler/safe/exec.go","line":28,"focus":"obligation_provenance","assertion":"External executable integrity requires an attacker-controlled deployment capability; do not merge it with argument injection merely because the API is shared."}
+  ],
+  "controls": ["AF-1a70f5e5428f0cb0","AF-9e86c44a23636965","AF-a70c394dbd055e63","AF-46a18ff8767638bf","AF-1810c2c9f22f0df4","AF-11206c36e5b9a28c"],
+  "acceptance": "Execution validity, source authority, candidate identity and scoped reasoning are assessed separately. Existing model statuses are not semantic ground truth. Real external unknowns need not become confirmed or rejected."
+}
