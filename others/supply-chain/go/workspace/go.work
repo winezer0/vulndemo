@@ -1,0 +1,7 @@
+go 1.23
+
+use ../replace-inline
+
+replace (
+	example.invalid/original => example.invalid/fork v1.0.0
+)
